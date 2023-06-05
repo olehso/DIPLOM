@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>HLH</title>
+	
+	<link rel="icon" type="image/x-icon" href="img/icon.png">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<script src="js/app.js" defer></script>
+	<script src="js/toggleBtnscr.js" defer></script>
+	<script src="js/toolTip.js" defer></script>
+
+</head>
+
+<body>
+	
+	<div class="box-area">
+		<header>
+			<div class="navbar">
+				<h1 class="logo">HLH</h1>
+				<ul class="links">
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="services.html">SERVICES</a></li>
+					<li><a href="features.html">FEATURES</a></li>
+					<li><a href="contact us.html">CONTACT US</a></li>
+				</ul>
+				<div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+			</div>
+	
+			<div class="dropdown_menu">
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="about.html">ABOUT</a></li>
+				<li><a href="services.html">SERVICES</a></li>
+				<li><a href="features.html">FEATURES</a></li>
+				<li><a href="contact us.html">CONTACT US</a></li>
+			</div>
+		</header>
+
+		<div class="banner-area">
+			<h2>Ласкаво просимо <br> до HLH</h2>
+		</div>
+		<div class="content-area">
+			<div class="wrapper">
+				<div class="parametrs">
+					<div class="container">
+						<main class="param">
+							<div class="parametr">
+							<div class="parametr-left">
+								<img class="parametr_item" src="img/line-chart.png" alt="Alt">
+							</div>
+							<div class="vr"></div>
+							<div class="parametr-right">
+								
+								<div class="text-block parametr_item">
+									<h2 class="text-block__h">Параметри</h2>
+									<p class="text-block__p">Параметри технологічного процесу - це вимірювані чи контрольовані характеристики, які визначають чи впливають виконання конкретного виробничого чи технологічного процесу. Вони є числові значення або налаштування, які використовуються для контролю та оптимізації процесу.</p>
+									<button class="section__button section__button1" role="button">ГРАФІКИ</button>
+								</div>
+								
+							</div>
+						</div>
+			
+						<div class="parametr">
+							<div class="parametr-left">
+								<img class="parametr_item" src="img/line-charts.png" alt="Alt">
+							</div>
+							<div class="vr"></div>
+							<div class="parametr-right">
+								<div class="text-block parametr_item">
+									<h2 class="text-block__h">Параметри з позиційним сигналом</h2>
+									<p class="text-block__p">Параметри з позиційним сигналом технологічного процесу зазвичай відносяться до систем автоматичного керування, де позиційний сигнал є одним із способів зворотного зв'язку для контролю та регулювання процесу. Позиційний сигнал є інформацією про поточне становище або стан елемента або об'єкта в процесі.</p>
+									<button class="section__button section__button2" role="button">ДІАГРАМИ</button>
+								</div>
+							</div>
+						</div>
+							
+						</main>
+					</div>
+				</div>
+				<footer>
+						<div class="footer">&copy;<span> 2023</span><span> HLH. All rights reserved.</span></div>
+				</footer>
+			
+				<!-- MODAL WINDOW (OVERLAY) -->
+
+				<div class="modal modal1">
+					<div class="modal__main">
+						<div class="modal__source">
+							<div class="modal__container">
+								<form>
+									<label>
+										<input type="radio" name="myRadio">
+										<span onmouseover="showTooltip('Температура нагріву насосів відноситься до температури, за якої насоси працюють в оптимальному режимі. Ця температура залежить від типу насоса та його конструктивних особливостей та від конкретних умов експлуатації.')" onmouseout="hideTooltip()">
+											Температура нагріву насосів
+										</span>
+									</label>
+									<label>
+										<input type="radio" name="myRadio">
+										<span onmouseover="showTooltip('Зазвичай у приміщеннях з насосними станціями підтримується температурний режим, необхідний нормальної роботи устаткування. Це може бути кімната з контрольованою температурою або спеціальні системи кондиціонування повітря, щоб запобігти перегріву чи замерзанню насосів та іншого обладнання.')" onmouseout="hideTooltip()">
+											Температура в приміщенні
+										</span>
+									</label>
+									<label>
+										<input type="radio" name="myRadio">
+										<span onmouseover="showTooltip('Витрата води насосною станцією зазвичай відноситься до кількості води, яку насосна станція здатна перекачувати або постачати у певний проміжок часу. Цей параметр зазвичай вимірюється в одиницях об`єму води, наприклад, у кубічних метрах за годину (м³/год) або галонах за хвилину (GPM).')" onmouseout="hideTooltip()">
+											Витрати води
+										</span>
+									</label>
+									<label>
+										<input type="radio" name="myRadio">
+										<span onmouseover="showTooltip('Рівень затоплення насосної станції відноситься до вимірювання рівня води у її приміщенні. Насосна станція призначена для перекачування рідин, таких як вода або стічні води з одного місця в інше. Якщо рівень води в насосній станції піднімається вище за певну межу, це може призвести до неправильної роботи обладнання або навіть його пошкодження.')" onmouseout="hideTooltip()">
+											Рівень затоплення
+										</span>
+									</label>
+									<label>
+										<input type="radio" name="myRadio">
+										<span onmouseover="showTooltip('Тиск повітря насосної станції зазвичай відноситься до тиску, який створюється компресором або насосом для приводу рідини або газу через систему. Насосна станція може використовуватися для різних цілей, таких як водопостачання, опалення, кондиціювання повітря чи промислові процеси.')" onmouseout="hideTooltip()">
+											Тиск повітря
+										</span>
+									</label>
+									<label>
+										<input type="radio" name="myRadio">
+										<span onmouseover="showTooltip('Стан насосів на насосній станції відноситься до поточного стану та працездатності насосів. Включає інформацію про роботу насосів, таку як їх запуск, зупинка, швидкість обертання, витрата, тиск, енергоспоживання і т.д.')" onmouseout="hideTooltip()">
+											Стан насосів
+										</span>
+									</label>
+									<label>
+										<input type="radio" name="myRadio">
+										<span onmouseover="showTooltip('Рівень рідини в резервуарах насосної станції є висотою або обсягом рідини, що знаходиться в даних резервуарах. Цей вимір є важливим для контролю та управління процесом подачі рідини або наявності запасу в системі. Рівень рідини може бути виміряний за допомогою різних методів, таких як рівнеміри, датчики тиску, ультразвукові або радарні вимірювачі рівня. Знання рівня рідин дозволяє операторам контролювати запаси рідини, запобігати переповненню чи виснаженню резервуарів, а також виявляти витоку або інші проблеми в системі.')" onmouseout="hideTooltip()">
+											Рівень рідин в резервуарах
+										</span>
+									</label>
+									<label>
+										<input type="radio" name="myRadio">
+										<span onmouseover="showTooltip('Тиск на вході насосної станції зазвичай є мірою сили, з якою рідина (наприклад, вода або нафта) надходить у насосну систему. Цей тиск вимірюється в одиницях, таких як бари, паскала (Па) або фунти на квадратний дюйм (psi).')" onmouseout="hideTooltip()">
+											Тиск на вході насосної станції
+										</span>
+									</label>
+									<label>
+										<input type="radio" name="myRadio">
+										<span onmouseover="showTooltip('Рівень води в РЧВ (розподільно-збірної водонапірної) насосної станції відноситься до висоти або глибини води в її резервуарі або колодязі. Цей рівень води є важливим параметром, який контролюється та регулюється насосами для забезпечення безперервної подачі води до системи водопостачання.')" onmouseout="hideTooltip()">
+											Рівень води в РЧВ
+										</span>
+									</label>
+									<label>
+										<input type="radio" name="myRadio">
+										<span onmouseover="showTooltip('Струм у двигуні насоса є електричним струмом, який протікає через обмотки двигуна і створює магнітне поле, необхідне для роботи насоса. Цей струм може бути змінним або постійним залежно від типу двигуна. Зазвичай у технічній документації або специфікаціях насосів вказується номінальний струм або струм споживання, який описує електричну потужність, необхідну для роботи двигуна насоса за нормальних умов.')" onmouseout="hideTooltip()">
+											Струм в двигуні насоса
+										</span>
+									</label>
+								</form>
+							</div>
+							<div class="modal__right modal__item">
+								<textarea id="tooltipTextarea" name="story" rows="20" cols="60" readonly"></textarea>
+							</div>
+						</div>
+						<div class="modal__under">
+							<div class="modal__close__button">
+								<button class="modal__close">НАЗАД</button>
+							</div>
+							<div class="modal__diagram__button">
+								<button class="section__button section__button3">ДІАГРАМА</button>
+								<button class="section__button section__button4">АНІМАЦІЯ</button>
+							</div>
+						</div>
+				
+					</div>
+				</div>
+			
+				<div class="modal modal2">
+					<div class="modal__main">
+						<div class="modal__source">
+							<div class="modal__container">
+								<form>
+									<label>
+										<input type="radio" name="radio" checked="">
+										<span>Виникнення пожежі</span>
+									</label>
+									<label>
+										<input type="radio" name="radio">
+										<span>Затоплення</span>
+									</label>
+									<label>
+										<input type="radio" name="radio">
+										<span>Несанкціоноване проникнення на об’єкт</span>
+									</label>
+									<label>
+										<input type="radio" name="radio">
+										<span>Положення засувок</span>
+									</label>
+								</form>
+							</div>
+							<div class="modal__right modal__item">
+								<div class="text__area">
+									<textarea id="story" name="story" rows="20" cols="60" readonly>
+			
+									</textarea>
+								</div>
+							</div>
+						</div>
+						<div class="modal__close__button">
+							<button class="modal__close">НАЗАД</button>
+						</div>
+					</div>
+				</div>
+			
+				<div class="modal modal3">
+					<div class="modal__main">
+						<h2 class="modal__title">ДІАГРАМА</h2>
+						<div class="modal__container">
+							<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos obcaecati reprehenderit minima nesciunt error sequi iste dolor? Veniam quas dolorum, odio natus officiis non, accusamus quae, quod temporibus voluptate tempora.</p>
+						</div>
+			
+						<button class="modal__close">НАЗАД</button>
+					</div>
+				</div>
+			
+				<div class="modal modal4">
+					<div class="modal__main">
+						<h2 class="modal__title">АНІМАЦІЯ</h2>
+						<div class="modal__container">
+							<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos obcaecati reprehenderit minima nesciunt error sequi iste dolor? Veniam quas dolorum, odio natus officiis non, accusamus quae, quod temporibus voluptate tempora.</p>
+						</div>
+			
+						<button class="modal__close">НАЗАД</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
