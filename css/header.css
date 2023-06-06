@@ -3,7 +3,6 @@ li {
 }
 header {
 	position: relative;
-	padding: 0 2rem;
 	height: 100px;
 	width: 100vw;
 	z-index: 2;

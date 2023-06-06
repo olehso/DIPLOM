@@ -66,6 +66,11 @@ modalController({
 	btnClose: '.modal__close'
 });
 
+// modalController({
+// 	modal: '.modal3',
 
+// 	btnOpen: '.section__button4',
+// 	btnClose: '.modal__close'
+// });
 
 
