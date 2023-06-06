@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/modal.css">
+	<link rel="stylesheet" href="css/chart.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	<script src="js/app.js" defer></script>
@@ -99,67 +100,68 @@
 							<div class="modal__container">
 								<form>
 									<label>
-										<input type="radio" name="myRadio">
+										<input type="radio" name="graph" value="graph1" checked>
 										<span onmouseover="showTooltip('Температура нагріву насосів відноситься до температури, за якої насоси працюють в оптимальному режимі. Ця температура залежить від типу насоса та його конструктивних особливостей та від конкретних умов експлуатації.')" onmouseout="hideTooltip()">
 											Температура нагріву насосів
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="myRadio">
+										<input type="radio" name="graph" value="graph2">
 										<span onmouseover="showTooltip('Зазвичай у приміщеннях з насосними станціями підтримується температурний режим, необхідний нормальної роботи устаткування. Це може бути кімната з контрольованою температурою або спеціальні системи кондиціонування повітря, щоб запобігти перегріву чи замерзанню насосів та іншого обладнання.')" onmouseout="hideTooltip()">
 											Температура в приміщенні
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="myRadio">
+										<input type="radio" name="graph" value="graph3">
 										<span onmouseover="showTooltip('Витрата води насосною станцією зазвичай відноситься до кількості води, яку насосна станція здатна перекачувати або постачати у певний проміжок часу. Цей параметр зазвичай вимірюється в одиницях об`єму води, наприклад, у кубічних метрах за годину (м³/год) або галонах за хвилину (GPM).')" onmouseout="hideTooltip()">
 											Витрати води
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="myRadio">
+										<input type="radio" name="graph" value="graph4">
 										<span onmouseover="showTooltip('Рівень затоплення насосної станції відноситься до вимірювання рівня води у її приміщенні. Насосна станція призначена для перекачування рідин, таких як вода або стічні води з одного місця в інше. Якщо рівень води в насосній станції піднімається вище за певну межу, це може призвести до неправильної роботи обладнання або навіть його пошкодження.')" onmouseout="hideTooltip()">
 											Рівень затоплення
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="myRadio">
+										<input type="radio" name="graph" value="graph5">
 										<span onmouseover="showTooltip('Тиск повітря насосної станції зазвичай відноситься до тиску, який створюється компресором або насосом для приводу рідини або газу через систему. Насосна станція може використовуватися для різних цілей, таких як водопостачання, опалення, кондиціювання повітря чи промислові процеси.')" onmouseout="hideTooltip()">
 											Тиск повітря
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="myRadio">
+										<input type="radio" name="graph" value="graph6">
 										<span onmouseover="showTooltip('Стан насосів на насосній станції відноситься до поточного стану та працездатності насосів. Включає інформацію про роботу насосів, таку як їх запуск, зупинка, швидкість обертання, витрата, тиск, енергоспоживання і т.д.')" onmouseout="hideTooltip()">
 											Стан насосів
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="myRadio">
+										<input type="radio" name="graph" value="graph7">
 										<span onmouseover="showTooltip('Рівень рідини в резервуарах насосної станції є висотою або обсягом рідини, що знаходиться в даних резервуарах. Цей вимір є важливим для контролю та управління процесом подачі рідини або наявності запасу в системі. Рівень рідини може бути виміряний за допомогою різних методів, таких як рівнеміри, датчики тиску, ультразвукові або радарні вимірювачі рівня. Знання рівня рідин дозволяє операторам контролювати запаси рідини, запобігати переповненню чи виснаженню резервуарів, а також виявляти витоку або інші проблеми в системі.')" onmouseout="hideTooltip()">
 											Рівень рідин в резервуарах
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="myRadio">
+										<input type="radio" name="graph" value="graph8">
 										<span onmouseover="showTooltip('Тиск на вході насосної станції зазвичай є мірою сили, з якою рідина (наприклад, вода або нафта) надходить у насосну систему. Цей тиск вимірюється в одиницях, таких як бари, паскала (Па) або фунти на квадратний дюйм (psi).')" onmouseout="hideTooltip()">
 											Тиск на вході насосної станції
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="myRadio">
+										<input type="radio" name="graph" value="graph9">
 										<span onmouseover="showTooltip('Рівень води в РЧВ (розподільно-збірної водонапірної) насосної станції відноситься до висоти або глибини води в її резервуарі або колодязі. Цей рівень води є важливим параметром, який контролюється та регулюється насосами для забезпечення безперервної подачі води до системи водопостачання.')" onmouseout="hideTooltip()">
 											Рівень води в РЧВ
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="myRadio">
+										<input type="radio" name="graph" value="graph10">
 										<span onmouseover="showTooltip('Струм у двигуні насоса є електричним струмом, який протікає через обмотки двигуна і створює магнітне поле, необхідне для роботи насоса. Цей струм може бути змінним або постійним залежно від типу двигуна. Зазвичай у технічній документації або специфікаціях насосів вказується номінальний струм або струм споживання, який описує електричну потужність, необхідну для роботи двигуна насоса за нормальних умов.')" onmouseout="hideTooltip()">
 											Струм в двигуні насоса
 										</span>
 									</label>
 								</form>
 							</div>
+							<!-- <div id="chartContainer"></div> -->
 							<div class="modal__right modal__item">
 								<textarea id="tooltipTextarea" name="story" rows="20" cols="60" readonly"></textarea>
 							</div>
@@ -218,7 +220,8 @@
 					<div class="modal__main">
 						<h2 class="modal__title">ДІАГРАМА</h2>
 						<div class="modal__container">
-							<canvas id="myChart" width="400px" height="200px"></canvas>
+							<canvas id="chartContainer" width="400px" height="200px"></canvas>
+							<!-- <div id="chartContainer"></div> -->
 						</div>
 						
 						<div class="modal__close__button">
@@ -231,7 +234,7 @@
 					<div class="modal__main">
 						<h2 class="modal__title">АНІМАЦІЯ</h2>
 						<div class="modal__container">
-							<canvas id="myChart" width="600px" height="300px"></canvas>
+							<!-- <canvas id="myChart" width="600px" height="300px"></canvas> -->
 						</div>
 						
 						<div class="modal__close__button">
@@ -244,6 +247,45 @@
 	</div>
 
 	<script>
+		// Создание графиков
+		var chart1 = new Chart(document.getElementById('chartContainer').getContext('2d'), {
+		type: 'line',
+		data: {
+			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+			datasets: [{
+				label: 'Test',
+				data: [12, 19, 3, 5, 2, 3],
+				backgroundColor: ['white'],
+				borderColor: ['white'],
+				borderWidth: 2
+			}]
+		},
+		options: {
+			scales: {
+				y: {
+					beginAtZero: true
+				}
+			}
+		}
+		});
+		// Обработчик события при изменении выбранного radio button
+		document.querySelectorAll('input[name="graph"]').forEach(function(radio) {
+		radio.addEventListener('change', function() {
+			// Очищаем содержимое контейнера
+			document.getElementById('chartContainer').innerHTML = '';
+
+			// Отображаем выбранный график
+			if (this.value === 'graph1') {
+			chart1.render();
+			} else if (this.value === 'graph2') {
+			chart2.render();
+			} else if (this.value === 'graph3') {
+			chart3.render();
+			}
+		});
+		});
+	</script>
+	<!-- <script>
 		let ctx = document.querySelector('#myChart').getContext('2d');
 		new Chart(ctx, {
 			type: 'line',
@@ -265,7 +307,7 @@
 			}
 			}
 		});
-	</script>
+	</script> -->
 
 
 </body>
