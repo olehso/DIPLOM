@@ -1,7 +1,7 @@
 const modalController = ({modal, btnOpen, btnClose, time = 300}) => {
 	const buttonElems = document.querySelectorAll(btnOpen);
 	const modalElem = document.querySelector(modal);
-
+	
 	modalElem.style.cssText = `
 		display: flex;
 		visibility: hidden;
@@ -54,23 +54,14 @@ modalController({
 	btnClose: '.modal__close'
 });
 
-modalController({
-	modal: '.modal3',
-	btnOpen: '.section__button3',
-	btnClose: '.modal__close'
-});
-
-modalController({
-	modal: '.modal4',
-	btnOpen: '.section__button4',
-	btnClose: '.modal__close'
-});
-
 // modalController({
 // 	modal: '.modal3',
-
-// 	btnOpen: '.section__button4',
+// 	btnOpen: '.section__button3',
 // 	btnClose: '.modal__close'
 // });
 
-
+// modalController({
+// 	modal: '.modal4',
+// 	btnOpen: '.section__button4',
+// 	btnClose: '.modal__close'
+// });
