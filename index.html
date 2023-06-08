@@ -101,50 +101,50 @@
 								<form>
 									<label>
 										<input type="radio" name="chartType" value="line1" onclick="selectChartType('line1')">
-										<span onmouseover="showTooltip('Температура нагріву насосів відноситься до температури, за якої насоси працюють в оптимальному режимі. Ця температура залежить від типу насоса та його конструктивних особливостей та від конкретних умов експлуатації.')" onmouseout="hideTooltip()">
-											Температура нагріву насосів
+										<span onmouseover="showTooltip('Цей параметр вказує на тиск рідини чи газу на вході у насос. Вимірюється у паскалях (Па) чи інших одиницях тиску. Високий тиск може вказувати на обмеження подачі рідини або на проблеми з обладнанням.')" onmouseout="hideTooltip()">
+											Тиск на вході насоса
 										</span>
 									</label>
 									<label>
 										<input type="radio" name="chartType" value="line2" onclick="selectChartType('line2')">
-										<span onmouseover="showTooltip('Зазвичай у приміщеннях з насосними станціями підтримується температурний режим, необхідний нормальної роботи устаткування. Це може бути кімната з контрольованою температурою або спеціальні системи кондиціонування повітря, щоб запобігти перегріву чи замерзанню насосів та іншого обладнання.')" onmouseout="hideTooltip()">
-											Температура в приміщенні
+										<span onmouseover="showTooltip('Цей параметр відображає температуру рідини, яка використовується для охолодження насоса та інших системних компонентів. Вимірюється в градусах Цельсія (°C) або в інших одиницях температури. Висока температура може вказувати на проблеми з охолодженням або перегріванням обладнання.')" onmouseout="hideTooltip()">
+											Температура охолоджувальної<br>рідини
 										</span>
 									</label>
 									<label>
 										<input type="radio" name="chartType" value="bar1" onclick="selectChartType('bar1')">
-										<span onmouseover="showTooltip('Витрата води насосною станцією зазвичай відноситься до кількості води, яку насосна станція здатна перекачувати або постачати у певний проміжок часу. Цей параметр зазвичай вимірюється в одиницях об`єму води, наприклад, у кубічних метрах за годину (м³/год) або галонах за хвилину (GPM).')" onmouseout="hideTooltip()">
-											Витрати води
+										<span onmouseover="showTooltip('Цей параметр вказує на кількість рідини, яка проходить через станцію насоса за певний час. Вимірюється в літрах за секунду (л/с) або в інших одиницях об`ємної витрати. Високі об`ємні витрати можуть вказувати на підвищене споживання рідини або на витік.')" onmouseout="hideTooltip()">
+											Об'ємна витрата рідини
 										</span>
 									</label>
 									<label>
 										<input type="radio" name="chartType" value="line3" onclick="selectChartType('line3')">
-										<span onmouseover="showTooltip('Рівень затоплення насосної станції відноситься до вимірювання рівня води у її приміщенні. Насосна станція призначена для перекачування рідин, таких як вода або стічні води з одного місця в інше. Якщо рівень води в насосній станції піднімається вище за певну межу, це може призвести до неправильної роботи обладнання або навіть його пошкодження.')" onmouseout="hideTooltip()">
-											Рівень затоплення
+										<span onmouseover="showTooltip('Це значення відображає електричну потужність, яку споживає насос для роботи. Вимірюється у ватах (Вт) або кіловатах (кВт). Висока потужність може вказувати на споживання енергії чи насосні проблеми.')" onmouseout="hideTooltip()">
+											Потужність насосу
 										</span>
 									</label>
 									<label>
 										<input type="radio" name="chartType" value="bar2" onclick="selectChartType('bar2')">
-										<span onmouseover="showTooltip('Тиск повітря насосної станції зазвичай відноситься до тиску, який створюється компресором або насосом для приводу рідини або газу через систему. Насосна станція може використовуватися для різних цілей, таких як водопостачання, опалення, кондиціювання повітря чи промислові процеси.')" onmouseout="hideTooltip()">
-											Тиск повітря
+										<span onmouseover="showTooltip('Цей параметр відображає рівень вібрації під час роботи насоса. Вимірюється в метрах за секунду у квадраті (м/с²) або в інших одиницях вібрації. Високий рівень вібрації може вказувати на несправність або неправильну роботу насоса.')" onmouseout="hideTooltip()">
+											Вібрація насосу
 										</span>
 									</label>
 									<label>
 										<input type="radio" name="chartType" value="line4" onclick="selectChartType('line4')">
-										<span onmouseover="showTooltip('Стан насосів на насосній станції відноситься до поточного стану та працездатності насосів. Включає інформацію про роботу насосів, таку як їх запуск, зупинка, швидкість обертання, витрата, тиск, енергоспоживання і т.д.')" onmouseout="hideTooltip()">
-											Стан насосів
+										<span onmouseover="showTooltip('Цей параметр відображає рівень звуку, що виникає в приміщенні з насосною станцією. Вимірюється у децибелах (дБ) чи інших одиницях рівня звуку. Високий рівень шуму може вказувати на проблеми із шумоізоляцією або несправністю обладнання.')" onmouseout="hideTooltip()">
+											Рівень звуку у приміщенні
 										</span>
 									</label>
 									<label>
 										<input type="radio" name="chartType" value="bar3" onclick="selectChartType('bar3')">
-										<span onmouseover="showTooltip('Рівень рідини в резервуарах насосної станції є висотою або обсягом рідини, що знаходиться в даних резервуарах. Цей вимір є важливим для контролю та управління процесом подачі рідини або наявності запасу в системі. Рівень рідини може бути виміряний за допомогою різних методів, таких як рівнеміри, датчики тиску, ультразвукові або радарні вимірювачі рівня. Знання рівня рідин дозволяє операторам контролювати запаси рідини, запобігати переповненню чи виснаженню резервуарів, а також виявляти витоку або інші проблеми в системі.')" onmouseout="hideTooltip()">
-											Рівень рідин в резервуарах
+										<span onmouseover="showTooltip('Цей параметр відображає рівень електричної напруги, яка живить насосну станцію або її компоненти. Вимірюється у вольтах (В) або інших одиницях напруги. Зміни у напрузі можуть вказувати на проблеми з електричною системою або стабільністю живлення.')" onmouseout="hideTooltip()">
+											Електрична напруга живлення
 										</span>
 									</label>
 									<label>
 										<input type="radio" name="chartType" value="bar4" onclick="selectChartType('bar4')">
-										<span onmouseover="showTooltip('Тиск на вході насосної станції зазвичай є мірою сили, з якою рідина (наприклад, вода або нафта) надходить у насосну систему. Цей тиск вимірюється в одиницях, таких як бари, паскала (Па) або фунти на квадратний дюйм (psi).')" onmouseout="hideTooltip()">
-											Тиск на вході насосної станції
+										<span onmouseover="showTooltip('Цей параметр відображає рівень забруднень або домішок рідини, що проходить через насосну станцію. Може вимірюватися у числових значеннях або представлятися як категорій забруднень.')" onmouseout="hideTooltip()">
+											Рівень забруднень у рідині
 										</span>
 									</label>
 									<label>
@@ -163,7 +163,7 @@
 							</div>
 
 							<div class="modal__right modal__item">
-								<textarea id="tooltipTextarea" name="story" rows="20" cols="60" readonly"></textarea>
+								<textarea id="tooltipTextarea" name="story" rows="22" cols="58" readonly"></textarea>
 							</div>
 						</div>
 						<div class="modal__under">
@@ -186,33 +186,63 @@
 							<div class="modal__container">
 								<form>
 									<label>
-										<input type="radio" name="radio" checked="">
-										<span>Виникнення пожежі</span>
+										<input type="radio" name="chartType" value="line7" onclick="selectChartType('line7')">
+										<span onmouseover="showTooltipDesc('Цей параметр показує поточний рівень заповнення резервуару насосної станції. Значення 0 означає повністю порожній резервуар, а значення 1 вказує повністю заповнений резервуар. Проміжні значення між 0 та 1 відповідають проміжним рівням заповнення.')" onmouseout="hideTooltipDesc()">
+											Рівень заповнення резервуару
+										</span>
 									</label>
 									<label>
-										<input type="radio" name="radio">
-										<span>Затоплення</span>
+										<input type="radio" name="chartType">
+										<span <span onmouseover="showTooltipDesc('Цей параметр відображає поточний рівень заряду акумулятора насосної станції. Значення 0 вказує на повністю розряджений акумулятор, а значення 1 вказує на повністю заряджений акумулятор. Значення між 0 та 1 відображають проміжні рівні заряду.')" onmouseout="hideTooltipDesc()">
+											Рівень заряду акумулятора
+										</span>
 									</label>
 									<label>
-										<input type="radio" name="radio">
-										<span>Несанкціоноване проникнення на об’єкт</span>
+										<input type="radio" name="chartType">
+										<span <span onmouseover="showTooltipDesc('Цей параметр показує стан клапана насосної станції. Значення 0 означає повністю закритий клапан, а значення 1 вказує повністю відкритий клапан. Проміжні значення між 0 та 1 можуть вказувати на часткове відкриття клапана.')" onmouseout="hideTooltipDesc()">
+											Відкриття/закриття клапана
+										</span>
 									</label>
 									<label>
-										<input type="radio" name="radio">
-										<span>Положення засувок</span>
+										<input type="radio" name="chartType">
+										<span <span onmouseover="showTooltipDesc('Цей параметр вказує на наявність або відсутність зупинки насосної станції. Значення 0 означає відсутність аварійної зупинки, а значення 1 свідчить про наявність аварійної зупинки. Можливі інші проміжні значення, які можуть вказувати на різні рівні аварійності.')" onmouseout="hideTooltipDesc()">
+											Режим аварійної зупинки
+										</span>
+									</label>
+									<label>
+										<input type="radio" name="chartType">
+										<span <span onmouseover="showTooltipDesc('Цей параметр відображає стан системи охолодження насосної станції. Значення 0 означає відсутність роботи системи охолодження, а значення 1 вказує на наявність системи охолодження, що працює. Можливі інші проміжні значення, які можуть вказувати на різні режими роботи системи охолодження.')" onmouseout="hideTooltipDesc()">
+											Стан системи охолодження
+										</span>
+									</label>
+									<label>
+										<input type="radio" name="chartType">
+										<span <span onmouseover="showTooltipDesc('Цей параметр відображає поточний рівень засмічення фільтра насосної станції. Значення 0 відповідає чистому фільтру, а значення 1 вказує сильно засмічений фільтр. Можливі інші проміжні значення, які можуть вказувати на різні рівні засмічення фільтра.')" onmouseout="hideTooltipDesc()">
+											Рівень засмічення фільтра
+										</span>
+									</label>
+									<label>
+										<input type="radio" name="chartType">
+										<span <span onmouseover="showTooltipDesc('Цей параметр вказує на поточний режим роботи насоса на станції. Значення 0 відповідає зупиненому насосу, а значення 1 вказує на діючий насос. Можливі проміжні значення, які можуть відображати різні режими роботи насоса, такі як проміжна швидкість або режим очікування.')" onmouseout="hideTooltipDesc()">
+											Режим роботи насосу
+										</span>
 									</label>
 								</form>
 							</div>
 							<div class="modal__right modal__item">
 								<div class="text__area">
-									<textarea id="story" name="story" rows="20" cols="60" readonly>
-			
-									</textarea>
+									<textarea id="tooltipTextareaDescription" name="story" rows="20" cols="57" readonly></textarea>
 								</div>
 							</div>
 						</div>
-						<div class="modal__close__button">
-							<button class="modal__close">НАЗАД</button>
+						<div class="modal__under">
+							<div class="modal__close__button">
+								<button class="modal__close">НАЗАД</button>
+							</div>
+							<div class="modal__diagram__button">
+								<button  class="section__button section__button3" onclick="openModal()">ДІАГРАМА</button>
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -229,32 +259,19 @@
 						</div>
 					</div>
 				</div>
-				<!-- <div id="modal" class="modal modal3">
+
+				<div id="modal" class="modal">
 					<div class="modal__main">
-						<h2 class="modal__title">ДІАГРАМА</h2>
+						<h2 class="modal__title">DIA</h2>
 						<div class="modal__container">
-							<canvas id="chartCanvas" width="400px" height="200px"></canvas>
-							
+							<canvas id="chartCanvas" ></canvas>
 						</div>
 						
 						<div class="modal__close__button">
 							<button class="modal__close" onclick="closeModal()">НАЗАД</button>
 						</div>
 					</div>
-				</div> -->
-			
-				<!-- <div class="modal modal4">
-					<div class="modal__main">
-						<h2 class="modal__title">АНІМАЦІЯ</h2>
-						<div class="modal__container">
-							<canvas id="myChart" width="600px" height="300px"></canvas>
-						</div>
-						
-						<div class="modal__close__button">
-							<button class="modal__close">НАЗАД</button>
-						</div>
-					</div>
-				</div> -->
+				</div>
 			</div>
 		</div>
 	</div>
@@ -275,8 +292,17 @@
 
 			var modal = document.getElementById('modal');
 			modal.style.display = 'flex';
-	
-		//   var selectedChartType = document.querySelector('input[name="graph"]:checked').value;
+
+			drawChart(selectedChartType);
+		}
+		function openModal1() {
+			if (selectChartType === ''){
+				return;
+			}
+
+			var modalc = document.getElementById('modalc');
+			modalc.style.display = 'flex';
+			
 			drawChart(selectedChartType);
 		}
 	
@@ -284,6 +310,10 @@
 		function closeModal() {
 		  var modal = document.getElementById('modal');
 		  modal.style.display = 'none';
+		}
+		function closeModal1() {
+		  var modalc = document.getElementById('modalc');
+		  modalc.style.display = 'none';
 		}
 	
 		// Функция отрисовки графика
@@ -304,10 +334,10 @@
       if (chartType === 'line1') {
 		chartType = 'line';
         var data = {
-          labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн'],
+          labels: [1, 1, 1, 2, 2, 2, 3],
           datasets: [{
             label: 'График 1',
-            data: [10, 20, 30, 40, 50, 60],
+            data: [60.5, 62.2, 59.8, 63.1, 61.7, 62.8, 59.5],
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1
@@ -326,10 +356,10 @@
       } else if (chartType === 'line2') {
 		chartType = 'line';
         var data = {
-          labels: ['Зима', 'Весна', 'Лето', 'Осень'],
+          labels: [3.00, 6.00, 9.00, 15.00, 18.00, 21.00],
           datasets: [{
             label: 'График 2',
-            data: [100, 54, 82, 20],
+            data: [23.5, 24.1, 22.9, 23.8, 24.5, 22.3],
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
             borderColor: 'rgba(255, 99, 132, 1)',
             borderWidth: 1
@@ -503,6 +533,28 @@
 		chartType = 'line';
         var data = {
 		  labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн'],
+          datasets: [{
+            label: 'График 1',
+            data: [43, 23, 65, 12, 87, 60],
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+          }]
+        };
+        var options = {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        };
+
+        chartData = data;
+        chartOptions = options;
+      } else if (chartType === 'line7') {
+		chartType = 'line';
+        var data = {
+		  labels: ['sdf', 'sdf', 'gdf', 'hgf', 'jgh', 'khj'],
           datasets: [{
             label: 'График 1',
             data: [43, 23, 65, 12, 87, 60],
