@@ -1,5 +1,5 @@
  /* BUTTON */
-.section__button, .modal__close {
+.section__button, .modal__close, .refresh__button {
 	align-items: center;
 	background-color: #0f121a;
 	border: 2px solid rgb(255, 255, 255);
@@ -52,9 +52,20 @@
 	color: #8FAFFF;
 	fill: #8FAFFF;
   }
+  .refresh__button:hover {
+	border-color: #8FAFFF;
+	color: #8FAFFF;
+	fill: #8FAFFF;
+  }
+  
+  .refresh__button:active {
+	border-color: #8FAFFF;
+	color: #8FAFFF;
+	fill: #8FAFFF;
+  }
   
   @media (min-width: 768px) {
-	.section__button, .modal__close {
+	.section__button, .modal__close, .refresh__button {
 	  min-width: 170px;
 	}
   } 
@@ -82,10 +93,53 @@
 	padding: 30px;
 	cursor: default;
 }
-.modal__title {
-	margin-bottom: 30px;
+.modal__critical {
+	position: relative;
+	width: 600px;
+	height: 200px;
+	max-width: 100%;
+	max-height: 100%;
+	background-color: white;
+	margin: auto;
+	color: #000;
+	padding: 30px;
+	cursor: default;
 }
-.modal__close {
+.modal__critical p {
+	font-family: Montserrat-e;
+}
+.modal-header {
+	background-color: red;
+	color: white;
+	padding: 20px;
+	margin: -30px;
+	margin-bottom: 30px;
+  }
+.close {
+	position: absolute;
+	top: 3px;
+	right: 8px;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+  }
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.modal__title {
+	margin-bottom: 20px;
+}
+.title__block {
+	font-family: Montserrat-g;
+}
+
+
+.modal__close, .refresh__button {
 	font-size: 14px;
 	height: 36px;
 	line-height: 16px;
@@ -183,3 +237,4 @@ textarea {
 .modal .modal__main .modal__source .modal__container span {
 	text-align: left;
 }
+

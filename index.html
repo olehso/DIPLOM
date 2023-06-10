@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/modal.css">
 	<link rel="stylesheet" href="css/chart.css">
+	<link rel="stylesheet" href="css/indicator.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	<script src="js/app.js" defer></script>
@@ -100,61 +101,61 @@
 							<div class="modal__container">
 								<form>
 									<label>
-										<input type="radio" name="chartType" value="line1" onclick="selectChartType('line1')">
+										<input type="radio" name="parameter" value="pressure" >
 										<span onmouseover="showTooltip('Цей параметр вказує на тиск рідини чи газу на вході у насос. Вимірюється у паскалях (Па) чи інших одиницях тиску. Високий тиск може вказувати на обмеження подачі рідини або на проблеми з обладнанням.')" onmouseout="hideTooltip()">
 											Тиск на вході насоса
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="chartType" value="line2" onclick="selectChartType('line2')">
+										<input type="radio" name="parameter" value="temperature" >
 										<span onmouseover="showTooltip('Цей параметр відображає температуру рідини, яка використовується для охолодження насоса та інших системних компонентів. Вимірюється в градусах Цельсія (°C) або в інших одиницях температури. Висока температура може вказувати на проблеми з охолодженням або перегріванням обладнання.')" onmouseout="hideTooltip()">
 											Температура охолоджувальної<br>рідини
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="chartType" value="bar1" onclick="selectChartType('bar1')">
+										<input type="radio" name="parameter" value="flowRate">
 										<span onmouseover="showTooltip('Цей параметр вказує на кількість рідини, яка проходить через станцію насоса за певний час. Вимірюється в літрах за секунду (л/с) або в інших одиницях об`ємної витрати. Високі об`ємні витрати можуть вказувати на підвищене споживання рідини або на витік.')" onmouseout="hideTooltip()">
 											Об'ємна витрата рідини
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="chartType" value="line3" onclick="selectChartType('line3')">
+										<input type="radio" name="parameter" value="power">
 										<span onmouseover="showTooltip('Це значення відображає електричну потужність, яку споживає насос для роботи. Вимірюється у ватах (Вт) або кіловатах (кВт). Висока потужність може вказувати на споживання енергії чи насосні проблеми.')" onmouseout="hideTooltip()">
 											Потужність насосу
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="chartType" value="bar2" onclick="selectChartType('bar2')">
+										<input type="radio" name="parameter" value="vibration">
 										<span onmouseover="showTooltip('Цей параметр відображає рівень вібрації під час роботи насоса. Вимірюється в метрах за секунду у квадраті (м/с²) або в інших одиницях вібрації. Високий рівень вібрації може вказувати на несправність або неправильну роботу насоса.')" onmouseout="hideTooltip()">
 											Вібрація насосу
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="chartType" value="line4" onclick="selectChartType('line4')">
+										<input type="radio" name="parameter" value="soundLevel">
 										<span onmouseover="showTooltip('Цей параметр відображає рівень звуку, що виникає в приміщенні з насосною станцією. Вимірюється у децибелах (дБ) чи інших одиницях рівня звуку. Високий рівень шуму може вказувати на проблеми із шумоізоляцією або несправністю обладнання.')" onmouseout="hideTooltip()">
 											Рівень звуку у приміщенні
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="chartType" value="bar3" onclick="selectChartType('bar3')">
+										<input type="radio" name="parameter" value="voltage">
 										<span onmouseover="showTooltip('Цей параметр відображає рівень електричної напруги, яка живить насосну станцію або її компоненти. Вимірюється у вольтах (В) або інших одиницях напруги. Зміни у напрузі можуть вказувати на проблеми з електричною системою або стабільністю живлення.')" onmouseout="hideTooltip()">
 											Електрична напруга живлення
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="chartType" value="bar4" onclick="selectChartType('bar4')">
+										<input type="radio" name="parameter" value="contamination">
 										<span onmouseover="showTooltip('Цей параметр відображає рівень забруднень або домішок рідини, що проходить через насосну станцію. Може вимірюватися у числових значеннях або представлятися як категорій забруднень.')" onmouseout="hideTooltip()">
 											Рівень забруднень у рідині
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="chartType" value="line5" onclick="selectChartType('line5')">
+										<input type="radio" name="parameter" value="waterLevel">
 										<span onmouseover="showTooltip('Рівень води в РЧВ (розподільно-збірної водонапірної) насосної станції відноситься до висоти або глибини води в її резервуарі або колодязі. Цей рівень води є важливим параметром, який контролюється та регулюється насосами для забезпечення безперервної подачі води до системи водопостачання.')" onmouseout="hideTooltip()">
 											Рівень води в РЧВ
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="chartType" value="line6" onclick="selectChartType('line6')">
+										<input type="radio" name="parameter" value="current">
 										<span onmouseover="showTooltip('Струм у двигуні насоса є електричним струмом, який протікає через обмотки двигуна і створює магнітне поле, необхідне для роботи насоса. Цей струм може бути змінним або постійним залежно від типу двигуна. Зазвичай у технічній документації або специфікаціях насосів вказується номінальний струм або струм споживання, який описує електричну потужність, необхідну для роботи двигуна насоса за нормальних умов.')" onmouseout="hideTooltip()">
 											Струм в двигуні насоса
 										</span>
@@ -171,7 +172,7 @@
 								<button class="modal__close">НАЗАД</button>
 							</div>
 							<div class="modal__diagram__button">
-								<button  class="section__button section__button3" onclick="openModal()">ДІАГРАМА</button>
+								<button id="openModalButton" class="section__button section__button3">ДІАГРАМА</button>
 								<button class="section__button section__button4">АНІМАЦІЯ</button>
 							</div>
 
@@ -186,43 +187,43 @@
 							<div class="modal__container">
 								<form>
 									<label>
-										<input type="radio" name="chartType" value="line7" onclick="selectChartType('line7')">
+										<input type="radio" name="chartType" value="Рівень заповнення резервуару" onclick="selectChartTypeN('line7')">
 										<span onmouseover="showTooltipDesc('Цей параметр показує поточний рівень заповнення резервуару насосної станції. Значення 0 означає повністю порожній резервуар, а значення 1 вказує повністю заповнений резервуар. Проміжні значення між 0 та 1 відповідають проміжним рівням заповнення.')" onmouseout="hideTooltipDesc()">
 											Рівень заповнення резервуару
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="chartType">
+										<input type="radio" name="chartType" value="Рівень заряду акумулятора" onclick="selectChartTypeN('line8')">
 										<span <span onmouseover="showTooltipDesc('Цей параметр відображає поточний рівень заряду акумулятора насосної станції. Значення 0 вказує на повністю розряджений акумулятор, а значення 1 вказує на повністю заряджений акумулятор. Значення між 0 та 1 відображають проміжні рівні заряду.')" onmouseout="hideTooltipDesc()">
 											Рівень заряду акумулятора
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="chartType">
+										<input type="radio" name="chartType" value="Відкриття/закриття клапана" onclick="selectChartTypeN('line9')">
 										<span <span onmouseover="showTooltipDesc('Цей параметр показує стан клапана насосної станції. Значення 0 означає повністю закритий клапан, а значення 1 вказує повністю відкритий клапан. Проміжні значення між 0 та 1 можуть вказувати на часткове відкриття клапана.')" onmouseout="hideTooltipDesc()">
 											Відкриття/закриття клапана
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="chartType">
+										<input type="radio" name="chartType" value="Режим аварійної зупинки" onclick="selectChartTypeN('line10')">
 										<span <span onmouseover="showTooltipDesc('Цей параметр вказує на наявність або відсутність зупинки насосної станції. Значення 0 означає відсутність аварійної зупинки, а значення 1 свідчить про наявність аварійної зупинки. Можливі інші проміжні значення, які можуть вказувати на різні рівні аварійності.')" onmouseout="hideTooltipDesc()">
 											Режим аварійної зупинки
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="chartType">
+										<input type="radio" name="chartType" value="Стан системи охолодження" onclick="selectChartTypeN('line11')">
 										<span <span onmouseover="showTooltipDesc('Цей параметр відображає стан системи охолодження насосної станції. Значення 0 означає відсутність роботи системи охолодження, а значення 1 вказує на наявність системи охолодження, що працює. Можливі інші проміжні значення, які можуть вказувати на різні режими роботи системи охолодження.')" onmouseout="hideTooltipDesc()">
 											Стан системи охолодження
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="chartType">
+										<input type="radio" name="chartType" value="Рівень засмічення фільтра" onclick="selectChartTypeN('line12')">
 										<span <span onmouseover="showTooltipDesc('Цей параметр відображає поточний рівень засмічення фільтра насосної станції. Значення 0 відповідає чистому фільтру, а значення 1 вказує сильно засмічений фільтр. Можливі інші проміжні значення, які можуть вказувати на різні рівні засмічення фільтра.')" onmouseout="hideTooltipDesc()">
 											Рівень засмічення фільтра
 										</span>
 									</label>
 									<label>
-										<input type="radio" name="chartType">
+										<input type="radio" name="chartType" value="Режим роботи насосу" onclick="selectChartTypeN('line13')">
 										<span <span onmouseover="showTooltipDesc('Цей параметр вказує на поточний режим роботи насоса на станції. Значення 0 відповідає зупиненому насосу, а значення 1 вказує на діючий насос. Можливі проміжні значення, які можуть відображати різні режими роботи насоса, такі як проміжна швидкість або режим очікування.')" onmouseout="hideTooltipDesc()">
 											Режим роботи насосу
 										</span>
@@ -240,43 +241,880 @@
 								<button class="modal__close">НАЗАД</button>
 							</div>
 							<div class="modal__diagram__button">
-								<button  class="section__button section__button3" onclick="openModal()">ДІАГРАМА</button>
+								<button  class="section__button section__button3" onclick="openModalNew()">ДІАГРАМА</button>
 							</div>
 
 						</div>
 					</div>
 				</div>
 
-				<div id="modal" class="modal">
+				<div id="chartModal" class="modal">
 					<div class="modal__main">
 						<h2 class="modal__title">ДІАГРАМА</h2>
 						<div class="modal__container">
-							<canvas id="chartCanvas" ></canvas>
+							<canvas id="chart" ></canvas>
 						</div>
 						
 						<div class="modal__close__button">
-							<button class="modal__close" onclick="closeModal()">НАЗАД</button>
+							<button id="closeButton" class="modal__close" >НАЗАД</button>
+              <button id="refreshButton" class="refresh__button">ОНОВИТИ ПОКАЗИ</button>
 						</div>
+            <div class="modal__diagram__button">
+              <div id="statusIndicator" class="status-indicator"></div>
+            </div>
 					</div>
 				</div>
 
-				<div id="modal" class="modal">
+				<div id="modalNew" class="modal">
 					<div class="modal__main">
-						<h2 class="modal__title">DIA</h2>
+						<h2 class="modal__title">ГРАФІК</h2>
 						<div class="modal__container">
-							<canvas id="chartCanvas" ></canvas>
+							<canvas id="chartCanvasNew" ></canvas>
 						</div>
-						
-						<div class="modal__close__button">
-							<button class="modal__close" onclick="closeModal()">НАЗАД</button>
+						<div class="modal__under">
+							<div class="modal__close__button">
+								<button class="modal__close" onclick="closeModalNew()">НАЗАД</button>
+								<button id="refreshButton" class="refresh__button" >ОНОВИТИ ПОКАЗИ</button>
+							</div>
+							<div class="modal__diagram__button">
+								<div id="statusIndicator" class="status-indicator"></div>
+							</div>
+
 						</div>
+					</div>
+				</div>
+				<div id="criticalModal" class="modal">
+					<div class="modal__critical">
+						<div class="modal-header">
+							<span class="close" onclick="closeCriticalModal()">&times;</span>
+						</div>
+						<h2 class="modal__title title__block"><i class="fa-solid fa-triangle-exclamation"></i>  КРИТИЧНА СИТУАЦІЯ</h2>
+						<p>Значення параметра перевищило критичний поріг!</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<script>
+  <!-- <script>
+   // Данные для графика
+   var chartData = {
+      labels: [],
+      datasets: []
+    };
+
+    // Опции графика
+    var chartOptions = {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    };
+
+    // Создание графика
+    var ctx = document.getElementById('chart').getContext('2d');
+    var chart = new Chart(ctx, {
+      type: 'line',
+      data: chartData,
+      options: chartOptions
+    });
+
+    // Функция для открытия модального окна
+    function openModal() {
+      var parameter = document.querySelector('input[name="parameter"]:checked').value;
+
+      // Очистка данных графика
+      chart.data.labels = [];
+      chart.data.datasets = [];
+
+      
+      // Добавление данных для выбранного параметра
+      if (parameter === 'pressure') {
+        chart.data.datasets.push({
+          label: 'Давление на входе насоса',
+          data: [],
+          borderColor: 'white',
+          fill: false
+        });
+      } else if (parameter === 'temperature') {
+        chart.data.datasets.push({
+          label: 'Температура охлаждающей жидкости',
+          data: [],
+          borderColor: 'red',
+          fill: false
+        });
+      } else if (parameter === 'flowRate') {
+        chart.data.datasets.push({
+          label: 'Объемный расход жидкости',
+          data: [],
+          borderColor: 'blue',
+          fill: false
+        });
+      } else if (parameter === 'power') {
+        chart.data.datasets.push({
+          label: 'Потужність насосу',
+          data: [],
+          borderColor: 'green',
+          fill: false
+        });
+      } else if (parameter === 'vibration') {
+        chart.data.datasets.push({
+          label: 'Потужність насосу',
+          data: [],
+          borderColor: 'orange',
+          fill: false
+        });
+      } else if (parameter === 'soundLevel') {
+        chart.data.datasets.push({
+          label: 'Потужність насосу',
+          data: [],
+          borderColor: 'yellow',
+          fill: false
+        });
+      } else if (parameter === 'voltage') {
+        chart.data.datasets.push({
+          label: 'Потужність насосу',
+          data: [],
+          borderColor: 'magenta',
+          fill: false
+        });
+      } else if (parameter === 'contamination') {
+        chart.data.datasets.push({
+          label: 'Потужність насосу',
+          data: [],
+          borderColor: 'aqua',
+          fill: false
+        });
+      } else if (parameter === 'waterLevel') {
+        chart.data.datasets.push({
+          label: 'Уровень воды в РЧВ',
+          data: [],
+          borderColor: 'chartreuse',
+          fill: false
+        });
+      } else if (parameter === 'current') {
+        chart.data.datasets.push({
+          label: 'Ток в двигателе насоса',
+          data: [],
+          borderColor: 'deeppink',
+          fill: false
+        });
+      }
+      // Добавьте обработку данных для остальных параметров
+
+      chart.update();
+
+      // Открытие модального окна
+      var modal = document.getElementById('chartModal');
+      modal.style.display = 'flex';
+    }
+
+    // Функция для закрытия модального окна
+    function closeModal() {
+      var modal = document.getElementById('chartModal');
+      modal.style.display = 'none';
+    }
+
+    // Функция для обновления показаний
+    function refreshData() {
+      // Очистка данных графика
+      chart.data.labels = [];
+      chart.data.datasets.forEach(function(dataset) {
+        dataset.data = [];
+      });
+
+      generateRandomData();
+    }
+
+    // Обработчик события для кнопки открытия модального окна
+    var openModalButton = document.getElementById('openModalButton');
+    openModalButton.addEventListener('click', openModal);
+
+    // Обработчик события для кнопки закрытия модального окна
+    var closeButton = document.getElementById('closeButton');
+    closeButton.addEventListener('click', closeModal);
+
+    // Обработчик события для кнопки обновления показаний
+    var refreshButton = document.getElementById('refreshButton');
+    refreshButton.addEventListener('click', refreshData);
+
+
+    // Функция для открытия модального окна с критической ситуацией
+    function openCriticalModal() {
+      var modal = document.getElementById('criticalModal');
+      modal.style.display = 'flex';
+    }
+
+    // Функция для закрытия модального окна с критическим сообщением
+    function closeCriticalModal() {
+        var modal = document.getElementById("criticalModal");
+        modal.style.display = "none";
+    }
+    // Генерация случайных данных для каждого параметра
+    function generateRandomData() {
+      var timestamp = new Date().toLocaleTimeString();
+
+      var parameter = document.querySelector('input[name="parameter"]:checked').value;
+
+      // Генерация случайных значений для выбранного параметра
+      if (parameter === 'pressure') {
+        var pressure = getRandomNumber(0.5, 1.5);
+        if (chart.data.labels.length >= 10) {
+          chart.data.labels.shift();
+          chart.data.datasets[0].data.shift();
+        }
+        chart.data.labels.push(timestamp);
+        chart.data.datasets[0].data.push(pressure);
+
+        var statusIndicator = document.getElementById('statusIndicator');
+        if (pressure >= 1.4) {
+          statusIndicator.classList.add('red');
+          statusIndicator.classList.remove('orange', 'green');
+          openCriticalModal();
+        } else if (pressure >= 1.2) {
+          statusIndicator.classList.add('orange');
+          statusIndicator.classList.remove('red', 'green');
+        } else {
+          statusIndicator.classList.add('green');
+          statusIndicator.classList.remove('orange', 'red');
+        }
+      } else if (parameter === 'temperature') {
+        var temperature = getRandomNumber(20, 100);
+        if (chart.data.labels.length >= 10) {
+          chart.data.labels.shift();
+          chart.data.datasets[0].data.shift();
+        }
+        chart.data.labels.push(timestamp);
+        chart.data.datasets[0].data.push(temperature);
+
+        var statusIndicator = document.getElementById('statusIndicator');
+        if (temperature >= 95) {
+          statusIndicator.classList.add('red');
+          statusIndicator.classList.remove('orange', 'green');
+          openCriticalModal();
+        } else if (temperature >= 80) {
+          statusIndicator.classList.add('orange');
+          statusIndicator.classList.remove('red', 'green');
+        } else {
+          statusIndicator.classList.add('green');
+          statusIndicator.classList.remove('orange', 'red');
+        }
+      } else if (parameter === 'flowRate') {
+        var flowRate = getRandomNumber(1, 10);
+        if (chart.data.labels.length >= 10) {
+          chart.data.labels.shift();
+          chart.data.datasets[0].data.shift();
+        }
+        chart.data.labels.push(timestamp);
+        chart.data.datasets[0].data.push(flowRate);
+
+        var statusIndicator = document.getElementById('statusIndicator');
+        if (flowRate >= 9) {
+          statusIndicator.classList.add('red');
+          statusIndicator.classList.remove('orange', 'green');
+          openCriticalModal();
+        } else if (flowRate >= 7) {
+          statusIndicator.classList.add('orange');
+          statusIndicator.classList.remove('red', 'green');
+        } else {
+          statusIndicator.classList.add('green');
+          statusIndicator.classList.remove('orange', 'red');
+        }
+      } else if (parameter === 'power') {
+        var power = getRandomNumber(100, 500);
+        if (chart.data.labels.length >= 10) {
+          chart.data.labels.shift();
+          chart.data.datasets[0].data.shift();
+        }
+        chart.data.labels.push(timestamp);
+        chart.data.datasets[0].data.push(power);
+
+        var statusIndicator = document.getElementById('statusIndicator');
+        if (power >= 470) {
+          statusIndicator.classList.add('red');
+          statusIndicator.classList.remove('orange', 'green');
+          openCriticalModal();
+        } else if (power >= 400) {
+          statusIndicator.classList.add('orange');
+          statusIndicator.classList.remove('red', 'green');
+        } else {
+          statusIndicator.classList.add('green');
+          statusIndicator.classList.remove('orange', 'red');
+        }
+      } else if (parameter === 'vibration') {
+        var vibration = getRandomNumber(0, 10);
+        if (chart.data.labels.length >= 10) {
+          chart.data.labels.shift();
+          chart.data.datasets[0].data.shift();
+        }
+        chart.data.labels.push(timestamp);
+        chart.data.datasets[0].data.push(vibration);
+
+        var statusIndicator = document.getElementById('statusIndicator');
+        if (vibration >= 9) {
+          statusIndicator.classList.add('red');
+          statusIndicator.classList.remove('orange', 'green');
+          openCriticalModal();
+        } else if (vibration >= 7) {
+          statusIndicator.classList.add('orange');
+          statusIndicator.classList.remove('red', 'green');
+        } else {
+          statusIndicator.classList.add('green');
+          statusIndicator.classList.remove('orange', 'red');
+        }
+      } else if (parameter === 'soundLevel') {
+        var soundLevel = getRandomNumber(30, 100);
+        if (chart.data.labels.length >= 10) {
+          chart.data.labels.shift();
+          chart.data.datasets[0].data.shift();
+        }
+        chart.data.labels.push(timestamp);
+        chart.data.datasets[0].data.push(soundLevel);
+
+        var statusIndicator = document.getElementById('statusIndicator');
+        if (soundLevel >= 90) {
+          statusIndicator.classList.add('red');
+          statusIndicator.classList.remove('orange', 'green');
+          openCriticalModal();
+        } else if (soundLevel >= 75) {
+          statusIndicator.classList.add('orange');
+          statusIndicator.classList.remove('red', 'green');
+        } else {
+          statusIndicator.classList.add('green');
+          statusIndicator.classList.remove('orange', 'red');
+        }
+      } else if (parameter === 'voltage') {
+        var voltage = getRandomNumber(200, 240);
+        if (chart.data.labels.length >= 10) {
+          chart.data.labels.shift();
+          chart.data.datasets[0].data.shift();
+        }
+        chart.data.labels.push(timestamp);
+        chart.data.datasets[0].data.push(voltage);
+
+        var statusIndicator = document.getElementById('statusIndicator');
+        if (voltage >= 220) {
+          statusIndicator.classList.add('red');
+          statusIndicator.classList.remove('orange', 'green');
+          openCriticalModal();
+        } else if (voltage >= 190) {
+          statusIndicator.classList.add('orange');
+          statusIndicator.classList.remove('red', 'green');
+        } else {
+          statusIndicator.classList.add('green');
+          statusIndicator.classList.remove('orange', 'red');
+        }
+      } else if (parameter === 'contamination') {
+        var contamination = getRandomNumber(0, 100);
+        if (chart.data.labels.length >= 10) {
+          chart.data.labels.shift();
+          chart.data.datasets[0].data.shift();
+        }
+        chart.data.labels.push(timestamp);
+        chart.data.datasets[0].data.push(contamination);
+
+        var statusIndicator = document.getElementById('statusIndicator');
+        if (contamination >= 90) {
+          statusIndicator.classList.add('red');
+          statusIndicator.classList.remove('orange', 'green');
+          openCriticalModal();
+        } else if (contamination >= 75) {
+          statusIndicator.classList.add('orange');
+          statusIndicator.classList.remove('red', 'green');
+        } else {
+          statusIndicator.classList.add('green');
+          statusIndicator.classList.remove('orange', 'red');
+        }
+      }  else if (parameter === 'waterLevel') {
+        var waterLevel = getRandomNumber(0, 100);
+        if (chart.data.labels.length >= 10) {
+          chart.data.labels.shift();
+          chart.data.datasets[0].data.shift();
+        }
+        chart.data.labels.push(timestamp);
+        chart.data.datasets[0].data.push(waterLevel);
+
+        var statusIndicator = document.getElementById('statusIndicator');
+        if (waterLevel >= 90) {
+          statusIndicator.classList.add('red');
+          statusIndicator.classList.remove('orange', 'green');
+          openCriticalModal();
+        } else if (waterLevel >= 75) {
+          statusIndicator.classList.add('orange');
+          statusIndicator.classList.remove('red', 'green');
+        } else {
+          statusIndicator.classList.add('green');
+          statusIndicator.classList.remove('orange', 'red');
+        }
+      }  else if (parameter === 'current') {
+        var current = getRandomNumber(0, 10);
+        if (chart.data.labels.length >= 10) {
+          chart.data.labels.shift();
+          chart.data.datasets[0].data.shift();
+        }
+        chart.data.labels.push(timestamp);
+        chart.data.datasets[0].data.push(current);
+
+        var statusIndicator = document.getElementById('statusIndicator');
+        if (current >= 9) {
+          statusIndicator.classList.add('red');
+          statusIndicator.classList.remove('orange', 'green');
+          openCriticalModal();
+        } else if (current >= 7) {
+          statusIndicator.classList.add('orange');
+          statusIndicator.classList.remove('red', 'green');
+        } else {
+          statusIndicator.classList.add('green');
+          statusIndicator.classList.remove('orange', 'red');
+        }
+      }
+      // Добавьте генерацию случайных значений для остальных параметров
+      chart.update();
+    }
+
+    // Генерация случайных данных каждую секунду
+    setInterval(generateRandomData, 1000);
+
+    // Генерация случайного числа в заданном диапазоне
+    function getRandomNumber(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+  </script> -->
+  
+  <!-- <script>
+
+    // Данные для графика
+    var chartData = {
+       labels: [],
+       datasets: []
+     };
+ 
+     // Опции графика
+     var chartOptions = {
+       responsive: true,
+       scales: {
+         y: {
+           beginAtZero: true
+         }
+       }
+     };
+ 
+     // Создание графика
+     var ctx = document.getElementById('chart').getContext('2d');
+     var chart = new Chart(ctx, {
+       type: 'line',
+       data: chartData,
+       options: chartOptions
+     });
+ 
+     // Функция для открытия модального окна
+     function openModal() {
+       var parameter = document.querySelector('input[name="parameter"]:checked').value;
+ 
+       // Очистка данных графика
+       chart.data.labels = [];
+       chart.data.datasets = [];
+ 
+       var modal = document.getElementById('chartModal');
+       modal.style.display = 'flex';
+ 
+       // Добавление данных для выбранного параметра
+       if (parameter === 'pressure') {
+         chart.data.datasets.push({
+           label: 'Давление на входе насоса',
+           data: [],
+           borderColor: 'white',
+           fill: false
+         });
+       } else if (parameter === 'temperature') {
+         chart.data.datasets.push({
+           label: 'Температура охлаждающей жидкости',
+           data: [],
+           borderColor: 'red',
+           fill: false
+         });
+       } else if (parameter === 'flowRate') {
+         chart.data.datasets.push({
+           label: 'Объемный расход жидкости',
+           data: [],
+           borderColor: 'blue',
+           fill: false
+         });
+       } else if (parameter === 'power') {
+         chart.data.datasets.push({
+           label: 'Потужність насосу',
+           data: [],
+           borderColor: 'green',
+           fill: false
+         });
+       } else if (parameter === 'vibration') {
+         chart.data.datasets.push({
+           label: 'Потужність насосу',
+           data: [],
+           borderColor: 'orange',
+           fill: false
+         });
+       } else if (parameter === 'soundLevel') {
+         chart.data.datasets.push({
+           label: 'Потужність насосу',
+           data: [],
+           borderColor: 'yellow',
+           fill: false
+         });
+       } else if (parameter === 'voltage') {
+         chart.data.datasets.push({
+           label: 'Потужність насосу',
+           data: [],
+           borderColor: 'magenta',
+           fill: false
+         });
+       } else if (parameter === 'contamination') {
+         chart.data.datasets.push({
+           label: 'Потужність насосу',
+           data: [],
+           borderColor: 'aqua',
+           fill: false
+         });
+       } else if (parameter === 'waterLevel') {
+         chart.data.datasets.push({
+           label: 'Уровень воды в РЧВ',
+           data: [],
+           borderColor: 'chartreuse',
+           fill: false
+         });
+       } else if (parameter === 'current') {
+         chart.data.datasets.push({
+           label: 'Ток в двигателе насоса',
+           data: [],
+           borderColor: 'deeppink',
+           fill: false
+         });
+       }
+       // Добавьте обработку данных для остальных параметров
+ 
+       // chart.update();
+ 
+       // Установка интервала для обновления данных
+       clearInterval(intervalId);
+       intervalId = setInterval(function() {
+           generateRandomData(chart);
+       }, 1000);
+ 
+       var statusIndicator = document.getElementById("statusIndicator");
+       statusIndicator.classList.add("green"); // Изначально установим зеленый цвет
+       statusIndicator.classList.remove("green", "orange", "red"); // Удаление всех классов состояний
+ 
+     }
+ 
+     // Функция для закрытия модального окна
+     function closeModal() {
+       clearInterval(intervalId);
+       var modal = document.getElementById('chartModal');
+       modal.style.display = 'none';
+     }
+ 
+     // Функция для обновления показаний
+     // function refreshData() {
+     //   // Очистка данных графика
+     //   chart.data.labels = [];
+     //   chart.data.datasets.forEach(function(dataset) {
+     //     dataset.data = [];
+     //   });
+ 
+     //   generateRandomData();
+     // }
+ 
+     // Обработчик события для кнопки открытия модального окна
+     var openModalButton = document.getElementById('openModalButton');
+     openModalButton.addEventListener('click', openModal);
+ 
+     // Обработчик события для кнопки закрытия модального окна
+     var closeButton = document.getElementById('closeButton');
+     closeButton.addEventListener('click', closeModal);
+ 
+     // Обработчик события для кнопки обновления показаний
+     // var refreshButton = document.getElementById('refreshButton');
+     // refreshButton.addEventListener('click', refreshData);
+ 
+ 
+     // Функция для открытия модального окна с критической ситуацией
+     function openCriticalModal() {
+       var modal = document.getElementById('criticalModal');
+       modal.style.display = 'flex';
+     }
+ 
+     // Функция для закрытия модального окна с критическим сообщением
+     function closeCriticalModal() {
+         var modal = document.getElementById("criticalModal");
+         modal.style.display = "none";
+     }
+ 
+     // Генерация случайных данных для каждого параметра
+     function generateRandomData() {
+       var timestamp = new Date().toLocaleTimeString();
+ 
+       var parameter = document.querySelector('input[name="parameter"]:checked').value;
+ 
+       // Генерация случайных значений для выбранного параметра
+       if (parameter === 'pressure') {
+         var pressure = getRandomNumber(0.5, 1.5);
+         if (chart.data.labels.length >= 10) {
+           chart.data.labels.shift();
+           chart.data.datasets[0].data.shift();
+         }
+         chart.data.labels.push(timestamp);
+         chart.data.datasets[0].data.push(pressure);
+ 
+         var statusIndicator = document.getElementById('statusIndicator');
+         if (pressure >= 1.4) {
+           statusIndicator.classList.add('red');
+           statusIndicator.classList.remove('orange', 'green');
+           clearInterval(intervalId);
+           openCriticalModal();
+         } else if (pressure >= 1.2) {
+           statusIndicator.classList.add('orange');
+           statusIndicator.classList.remove('red', 'green');
+         } else {
+           statusIndicator.classList.add('green');
+           statusIndicator.classList.remove('orange', 'red');
+         }
+       } else if (parameter === 'temperature') {
+         var temperature = getRandomNumber(20, 100);
+         if (chart.data.labels.length >= 10) {
+           chart.data.labels.shift();
+           chart.data.datasets[0].data.shift();
+         }
+         chart.data.labels.push(timestamp);
+         chart.data.datasets[0].data.push(temperature);
+ 
+         var statusIndicator = document.getElementById('statusIndicator');
+         if (temperature >= 95) {
+           statusIndicator.classList.add('red');
+           statusIndicator.classList.remove('orange', 'green');
+           clearInterval(intervalId);
+           openCriticalModal();
+         } else if (temperature >= 80) {
+           statusIndicator.classList.add('orange');
+           statusIndicator.classList.remove('red', 'green');
+         } else {
+           statusIndicator.classList.add('green');
+           statusIndicator.classList.remove('orange', 'red');
+         }
+       } else if (parameter === 'flowRate') {
+         var flowRate = getRandomNumber(1, 10);
+         if (chart.data.labels.length >= 10) {
+           chart.data.labels.shift();
+           chart.data.datasets[0].data.shift();
+         }
+         chart.data.labels.push(timestamp);
+         chart.data.datasets[0].data.push(flowRate);
+ 
+         var statusIndicator = document.getElementById('statusIndicator');
+         if (flowRate >= 9) {
+           statusIndicator.classList.add('red');
+           statusIndicator.classList.remove('orange', 'green');
+           clearInterval(intervalId);
+           openCriticalModal();
+         } else if (flowRate >= 7) {
+           statusIndicator.classList.add('orange');
+           statusIndicator.classList.remove('red', 'green');
+         } else {
+           statusIndicator.classList.add('green');
+           statusIndicator.classList.remove('orange', 'red');
+         }
+       } else if (parameter === 'power') {
+         var power = getRandomNumber(100, 500);
+         if (chart.data.labels.length >= 10) {
+           chart.data.labels.shift();
+           chart.data.datasets[0].data.shift();
+         }
+         chart.data.labels.push(timestamp);
+         chart.data.datasets[0].data.push(power);
+ 
+         var statusIndicator = document.getElementById('statusIndicator');
+         if (power >= 470) {
+           statusIndicator.classList.add('red');
+           statusIndicator.classList.remove('orange', 'green');
+           clearInterval(intervalId);
+           openCriticalModal();
+         } else if (power >= 400) {
+           statusIndicator.classList.add('orange');
+           statusIndicator.classList.remove('red', 'green');
+         } else {
+           statusIndicator.classList.add('green');
+           statusIndicator.classList.remove('orange', 'red');
+         }
+       } else if (parameter === 'vibration') {
+         var vibration = getRandomNumber(0, 10);
+         if (chart.data.labels.length >= 10) {
+           chart.data.labels.shift();
+           chart.data.datasets[0].data.shift();
+         }
+         chart.data.labels.push(timestamp);
+         chart.data.datasets[0].data.push(vibration);
+ 
+         var statusIndicator = document.getElementById('statusIndicator');
+         if (vibration >= 9) {
+           statusIndicator.classList.add('red');
+           statusIndicator.classList.remove('orange', 'green');
+           clearInterval(intervalId);
+           openCriticalModal();
+         } else if (vibration >= 7) {
+           statusIndicator.classList.add('orange');
+           statusIndicator.classList.remove('red', 'green');
+         } else {
+           statusIndicator.classList.add('green');
+           statusIndicator.classList.remove('orange', 'red');
+         }
+       } else if (parameter === 'soundLevel') {
+         var soundLevel = getRandomNumber(30, 100);
+         if (chart.data.labels.length >= 10) {
+           chart.data.labels.shift();
+           chart.data.datasets[0].data.shift();
+         }
+         chart.data.labels.push(timestamp);
+         chart.data.datasets[0].data.push(soundLevel);
+ 
+         var statusIndicator = document.getElementById('statusIndicator');
+         if (soundLevel >= 90) {
+           statusIndicator.classList.add('red');
+           statusIndicator.classList.remove('orange', 'green');
+           clearInterval(intervalId);
+           openCriticalModal();
+         } else if (soundLevel >= 75) {
+           statusIndicator.classList.add('orange');
+           statusIndicator.classList.remove('red', 'green');
+         } else {
+           statusIndicator.classList.add('green');
+           statusIndicator.classList.remove('orange', 'red');
+         }
+       } else if (parameter === 'voltage') {
+         var voltage = getRandomNumber(200, 240);
+         if (chart.data.labels.length >= 10) {
+           chart.data.labels.shift();
+           chart.data.datasets[0].data.shift();
+         }
+         chart.data.labels.push(timestamp);
+         chart.data.datasets[0].data.push(voltage);
+ 
+         var statusIndicator = document.getElementById('statusIndicator');
+         if (voltage >= 220) {
+           statusIndicator.classList.add('red');
+           statusIndicator.classList.remove('orange', 'green');
+           clearInterval(intervalId);
+           openCriticalModal();
+         } else if (voltage >= 190) {
+           statusIndicator.classList.add('orange');
+           statusIndicator.classList.remove('red', 'green');
+         } else {
+           statusIndicator.classList.add('green');
+           statusIndicator.classList.remove('orange', 'red');
+         }
+       } else if (parameter === 'contamination') {
+         var contamination = getRandomNumber(0, 100);
+         if (chart.data.labels.length >= 10) {
+           chart.data.labels.shift();
+           chart.data.datasets[0].data.shift();
+         }
+         chart.data.labels.push(timestamp);
+         chart.data.datasets[0].data.push(contamination);
+ 
+         var statusIndicator = document.getElementById('statusIndicator');
+         if (contamination >= 90) {
+           statusIndicator.classList.add('red');
+           statusIndicator.classList.remove('orange', 'green');
+           clearInterval(intervalId);
+           openCriticalModal();
+         } else if (contamination >= 75) {
+           statusIndicator.classList.add('orange');
+           statusIndicator.classList.remove('red', 'green');
+         } else {
+           statusIndicator.classList.add('green');
+           statusIndicator.classList.remove('orange', 'red');
+         }
+       }  else if (parameter === 'waterLevel') {
+         var waterLevel = getRandomNumber(0, 100);
+         if (chart.data.labels.length >= 10) {
+           chart.data.labels.shift();
+           chart.data.datasets[0].data.shift();
+         }
+         chart.data.labels.push(timestamp);
+         chart.data.datasets[0].data.push(waterLevel);
+ 
+         var statusIndicator = document.getElementById('statusIndicator');
+         if (waterLevel >= 90) {
+           statusIndicator.classList.add('red');
+           statusIndicator.classList.remove('orange', 'green');
+           clearInterval(intervalId);
+           openCriticalModal();
+         } else if (waterLevel >= 75) {
+           statusIndicator.classList.add('orange');
+           statusIndicator.classList.remove('red', 'green');
+         } else {
+           statusIndicator.classList.add('green');
+           statusIndicator.classList.remove('orange', 'red');
+         }
+       }  else if (parameter === 'current') {
+         var current = getRandomNumber(0, 10);
+         if (chart.data.labels.length >= 10) {
+           chart.data.labels.shift();
+           chart.data.datasets[0].data.shift();
+         }
+         chart.data.labels.push(timestamp);
+         chart.data.datasets[0].data.push(current);
+ 
+         var statusIndicator = document.getElementById('statusIndicator');
+         if (current >= 9) {
+           statusIndicator.classList.add('red');
+           statusIndicator.classList.remove('orange', 'green');
+           clearInterval(intervalId);
+           openCriticalModal();
+         } else if (current >= 7) {
+           statusIndicator.classList.add('orange');
+           statusIndicator.classList.remove('red', 'green');
+         } else {
+           statusIndicator.classList.add('green');
+           statusIndicator.classList.remove('orange', 'red');
+         }
+       }
+       // Добавьте генерацию случайных значений для остальных параметров
+       chart.update();
+     }
+ 
+     // Генерация случайных данных каждую секунду
+     // setInterval(generateRandomData, 1000);
+     function updateChart() {
+       var parameter = document.querySelector('input[name="parameter"]:checked').value;
+ 
+             // Очистка данных графика
+             var dataset = chart.data.datasets[0];
+             dataset.data = [];
+             chart.data.labels = [];
+ 
+             // Обновление графика с новыми данными
+             clearInterval(intervalId);
+             intervalId = setInterval(function() {
+               generateRandomData(chart);
+             }, 1000);
+ 
+             // Установка индикатора состояния в зеленый цвет
+             var statusIndicator = document.getElementById("statusIndicator");
+             statusIndicator.classList.add("green");
+             statusIndicator.classList.remove("red", "orange");
+ 
+             // Закрытие модального окна с критическим сообщением
+             var criticalModal = document.getElementById("criticalModal");
+             criticalModal.style.display = "none";
+         }
+     // Генерация случайного числа в заданном диапазоне
+     function getRandomNumber(min, max) {
+       return Math.random() * (max - min) + min;
+     }
+   </script> -->
+	
+  <!-- <script>
 		var selectedChartType = '';
 
 		// Функция выбора типа графика
@@ -295,25 +1133,11 @@
 
 			drawChart(selectedChartType);
 		}
-		function openModal1() {
-			if (selectChartType === ''){
-				return;
-			}
-
-			var modalc = document.getElementById('modalc');
-			modalc.style.display = 'flex';
-			
-			drawChart(selectedChartType);
-		}
 	
 		// Функция закрытия модального окна
 		function closeModal() {
 		  var modal = document.getElementById('modal');
 		  modal.style.display = 'none';
-		}
-		function closeModal1() {
-		  var modalc = document.getElementById('modalc');
-		  modalc.style.display = 'none';
 		}
 	
 		// Функция отрисовки графика
@@ -551,28 +1375,6 @@
 
         chartData = data;
         chartOptions = options;
-      } else if (chartType === 'line7') {
-		chartType = 'line';
-        var data = {
-		  labels: ['sdf', 'sdf', 'gdf', 'hgf', 'jgh', 'khj'],
-          datasets: [{
-            label: 'График 1',
-            data: [43, 23, 65, 12, 87, 60],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
-          }]
-        };
-        var options = {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        };
-
-        chartData = data;
-        chartOptions = options;
       }
 
       var chartInstance = new Chart(chartCanvas, {
@@ -584,7 +1386,152 @@
       // Сохранение экземпляра графика в элементе canvas
       chartCanvas.chart = chartInstance;
     }
-	  </script>
+	</script> -->
+
+	<!-- <script>
+        var intervalId; // Идентификатор интервала для обновления данных
+        var chart; // Переменная для хранения объекта графика
+        var criticalThreshold = 0.95; // Критический порог значения параметра
+
+        // Функция для открытия модального окна
+        function openModalNew() {
+            var selectedParameter = document.querySelector('input[name="chartType"]:checked').value;
+
+            // Очистка данных графика, если график уже был создан
+            if (chart) {
+                chart.destroy();
+            }
+
+            var modal = document.getElementById("modalNew");
+            modal.style.display = "flex";
+
+            // Создание и отображение графика с помощью Chart.js
+            var ctx = document.getElementById("chartCanvasNew").getContext('2d');
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: selectedParameter,
+                        data: [],
+                        borderColor: 'white',
+                        backgroundColor: 'transparent',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Время'
+                            }
+                        },
+                        y: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Значение'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Установка интервала для обновления данных
+            clearInterval(intervalId);
+            intervalId = setInterval(function() {
+                updateChartData(chart);
+            }, 1000);
+
+            // Установка индикатора состояния
+            var statusIndicator = document.getElementById("statusIndicator");
+            statusIndicator.classList.remove("green", "orange", "red"); // Удаление всех классов состояний
+            statusIndicator.classList.add("green"); // Изначально установим зеленый цвет
+        }
+
+        // Функция для закрытия модального окна
+        function closeModalNew() {
+            clearInterval(intervalId);
+            var modal = document.getElementById("modalNew");
+            modal.style.display = "none";
+
+            // Очистка данных графика
+            if (chart) {
+                chart.destroy();
+            }
+        }
+
+        // Функция для закрытия модального окна с критическим сообщением
+        function closeCriticalModal() {
+            var modal = document.getElementById("criticalModal");
+            modal.style.display = "none";
+        }
+
+        // Функция для обновления данных графика
+        function updateChartData(chart) {
+            var randomValue = Math.random(); // Генерация случайного значения от 0 до 1
+            var dataset = chart.data.datasets[0];
+            var data = dataset.data;
+            var labels = chart.data.labels;
+
+            if (data.length >= 10) {
+                data.shift();
+                labels.shift();
+            }
+
+            data.push(randomValue);
+            labels.push(new Date().toLocaleTimeString());
+
+            chart.update();
+
+            // Обновление индикатора состояния
+            var statusIndicator = document.getElementById("statusIndicator");
+            if (randomValue >= criticalThreshold) {
+                statusIndicator.classList.remove("green", "orange");
+                statusIndicator.classList.add("red");
+
+                // Остановка обновления графика и открытие модального окна с критическим сообщением
+                clearInterval(intervalId);
+                var criticalModal = document.getElementById("criticalModal");
+                criticalModal.style.display = "flex";
+            } else if (randomValue >= 0.70) {
+                statusIndicator.classList.remove("green", "red");
+                statusIndicator.classList.add("orange");
+            } else {
+                statusIndicator.classList.remove("orange", "red");
+                statusIndicator.classList.add("green");
+            }
+        }
+
+        // Функция для обновления графика при критической ситуации
+        function updateChart() {
+            var selectedParameter = document.querySelector('input[name="chartType"]:checked').value;
+
+            // Очистка данных графика
+            var dataset = chart.data.datasets[0];
+            dataset.data = [];
+            chart.data.labels = [];
+
+            // Обновление графика с новыми данными
+            clearInterval(intervalId);
+            intervalId = setInterval(function() {
+                updateChartData(chart);
+            }, 1000);
+
+            // Установка индикатора состояния в зеленый цвет
+            var statusIndicator = document.getElementById("statusIndicator");
+            statusIndicator.classList.remove("red", "orange");
+            statusIndicator.classList.add("green");
+
+            // Закрытие модального окна с критическим сообщением
+            var criticalModal = document.getElementById("criticalModal");
+            criticalModal.style.display = "none";
+        }
+  </script> -->
+
 
 </body>
 </html>
