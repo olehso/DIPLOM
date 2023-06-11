@@ -241,7 +241,7 @@
 								<button class="modal__close">НАЗАД</button>
 							</div>
 							<div class="modal__diagram__button">
-								<button  class="section__button section__button3" onclick="openModalNew()">ДІАГРАМА</button>
+								<button  class="section__button section__button3" onclick="openModalWindow()">ДІАГРАМА</button>
 							</div>
 
 						</div>
@@ -252,7 +252,7 @@
 					<div class="modal__main">
 						<h2 class="modal__title">ДІАГРАМА</h2>
 						<div class="modal__container">
-							<canvas id="chart" ></canvas>
+							<canvas id="chart"></canvas>
 						</div>
 						
 						<div class="modal__close__button">
@@ -265,19 +265,19 @@
 					</div>
 				</div>
 
-				<div id="modalNew" class="modal">
+				<div id="secondModalWindow" class="modal">
 					<div class="modal__main">
 						<h2 class="modal__title">ГРАФІК</h2>
 						<div class="modal__container">
-							<canvas id="chartCanvasNew" ></canvas>
+							<canvas id="chartCanvas" ></canvas>
 						</div>
 						<div class="modal__under">
 							<div class="modal__close__button">
-								<button class="modal__close" onclick="closeModalNew()">НАЗАД</button>
-								<button id="refreshButton" class="refresh__button" >ОНОВИТИ ПОКАЗИ</button>
+								<button class="modal__close" onclick="closeModalWindow()">НАЗАД</button>
+								<button class="refresh__button" onclick="updateChart()">ОНОВИТИ ПОКАЗИ</button>
 							</div>
 							<div class="modal__diagram__button">
-								<div id="statusIndicator" class="status-indicator"></div>
+								<div id="secondStatusIndicator" class="status-indicator"></div>
 							</div>
 
 						</div>
@@ -296,409 +296,33 @@
 		</div>
 	</div>
 
-  <!-- <script>
-   // Данные для графика
-   var chartData = {
-      labels: [],
-      datasets: []
-    };
-
-    // Опции графика
-    var chartOptions = {
-      responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    };
-
-    // Создание графика
-    var ctx = document.getElementById('chart').getContext('2d');
-    var chart = new Chart(ctx, {
-      type: 'line',
-      data: chartData,
-      options: chartOptions
-    });
-
-    // Функция для открытия модального окна
-    function openModal() {
-      var parameter = document.querySelector('input[name="parameter"]:checked').value;
-
-      // Очистка данных графика
-      chart.data.labels = [];
-      chart.data.datasets = [];
-
-      
-      // Добавление данных для выбранного параметра
-      if (parameter === 'pressure') {
-        chart.data.datasets.push({
-          label: 'Давление на входе насоса',
-          data: [],
-          borderColor: 'white',
-          fill: false
-        });
-      } else if (parameter === 'temperature') {
-        chart.data.datasets.push({
-          label: 'Температура охлаждающей жидкости',
-          data: [],
-          borderColor: 'red',
-          fill: false
-        });
-      } else if (parameter === 'flowRate') {
-        chart.data.datasets.push({
-          label: 'Объемный расход жидкости',
-          data: [],
-          borderColor: 'blue',
-          fill: false
-        });
-      } else if (parameter === 'power') {
-        chart.data.datasets.push({
-          label: 'Потужність насосу',
-          data: [],
-          borderColor: 'green',
-          fill: false
-        });
-      } else if (parameter === 'vibration') {
-        chart.data.datasets.push({
-          label: 'Потужність насосу',
-          data: [],
-          borderColor: 'orange',
-          fill: false
-        });
-      } else if (parameter === 'soundLevel') {
-        chart.data.datasets.push({
-          label: 'Потужність насосу',
-          data: [],
-          borderColor: 'yellow',
-          fill: false
-        });
-      } else if (parameter === 'voltage') {
-        chart.data.datasets.push({
-          label: 'Потужність насосу',
-          data: [],
-          borderColor: 'magenta',
-          fill: false
-        });
-      } else if (parameter === 'contamination') {
-        chart.data.datasets.push({
-          label: 'Потужність насосу',
-          data: [],
-          borderColor: 'aqua',
-          fill: false
-        });
-      } else if (parameter === 'waterLevel') {
-        chart.data.datasets.push({
-          label: 'Уровень воды в РЧВ',
-          data: [],
-          borderColor: 'chartreuse',
-          fill: false
-        });
-      } else if (parameter === 'current') {
-        chart.data.datasets.push({
-          label: 'Ток в двигателе насоса',
-          data: [],
-          borderColor: 'deeppink',
-          fill: false
-        });
-      }
-      // Добавьте обработку данных для остальных параметров
-
-      chart.update();
-
-      // Открытие модального окна
-      var modal = document.getElementById('chartModal');
-      modal.style.display = 'flex';
-    }
-
-    // Функция для закрытия модального окна
-    function closeModal() {
-      var modal = document.getElementById('chartModal');
-      modal.style.display = 'none';
-    }
-
-    // Функция для обновления показаний
-    function refreshData() {
-      // Очистка данных графика
-      chart.data.labels = [];
-      chart.data.datasets.forEach(function(dataset) {
-        dataset.data = [];
-      });
-
-      generateRandomData();
-    }
-
-    // Обработчик события для кнопки открытия модального окна
-    var openModalButton = document.getElementById('openModalButton');
-    openModalButton.addEventListener('click', openModal);
-
-    // Обработчик события для кнопки закрытия модального окна
-    var closeButton = document.getElementById('closeButton');
-    closeButton.addEventListener('click', closeModal);
-
-    // Обработчик события для кнопки обновления показаний
-    var refreshButton = document.getElementById('refreshButton');
-    refreshButton.addEventListener('click', refreshData);
-
-
-    // Функция для открытия модального окна с критической ситуацией
-    function openCriticalModal() {
-      var modal = document.getElementById('criticalModal');
-      modal.style.display = 'flex';
-    }
-
-    // Функция для закрытия модального окна с критическим сообщением
-    function closeCriticalModal() {
-        var modal = document.getElementById("criticalModal");
-        modal.style.display = "none";
-    }
-    // Генерация случайных данных для каждого параметра
-    function generateRandomData() {
-      var timestamp = new Date().toLocaleTimeString();
-
-      var parameter = document.querySelector('input[name="parameter"]:checked').value;
-
-      // Генерация случайных значений для выбранного параметра
-      if (parameter === 'pressure') {
-        var pressure = getRandomNumber(0.5, 1.5);
-        if (chart.data.labels.length >= 10) {
-          chart.data.labels.shift();
-          chart.data.datasets[0].data.shift();
-        }
-        chart.data.labels.push(timestamp);
-        chart.data.datasets[0].data.push(pressure);
-
-        var statusIndicator = document.getElementById('statusIndicator');
-        if (pressure >= 1.4) {
-          statusIndicator.classList.add('red');
-          statusIndicator.classList.remove('orange', 'green');
-          openCriticalModal();
-        } else if (pressure >= 1.2) {
-          statusIndicator.classList.add('orange');
-          statusIndicator.classList.remove('red', 'green');
-        } else {
-          statusIndicator.classList.add('green');
-          statusIndicator.classList.remove('orange', 'red');
-        }
-      } else if (parameter === 'temperature') {
-        var temperature = getRandomNumber(20, 100);
-        if (chart.data.labels.length >= 10) {
-          chart.data.labels.shift();
-          chart.data.datasets[0].data.shift();
-        }
-        chart.data.labels.push(timestamp);
-        chart.data.datasets[0].data.push(temperature);
-
-        var statusIndicator = document.getElementById('statusIndicator');
-        if (temperature >= 95) {
-          statusIndicator.classList.add('red');
-          statusIndicator.classList.remove('orange', 'green');
-          openCriticalModal();
-        } else if (temperature >= 80) {
-          statusIndicator.classList.add('orange');
-          statusIndicator.classList.remove('red', 'green');
-        } else {
-          statusIndicator.classList.add('green');
-          statusIndicator.classList.remove('orange', 'red');
-        }
-      } else if (parameter === 'flowRate') {
-        var flowRate = getRandomNumber(1, 10);
-        if (chart.data.labels.length >= 10) {
-          chart.data.labels.shift();
-          chart.data.datasets[0].data.shift();
-        }
-        chart.data.labels.push(timestamp);
-        chart.data.datasets[0].data.push(flowRate);
-
-        var statusIndicator = document.getElementById('statusIndicator');
-        if (flowRate >= 9) {
-          statusIndicator.classList.add('red');
-          statusIndicator.classList.remove('orange', 'green');
-          openCriticalModal();
-        } else if (flowRate >= 7) {
-          statusIndicator.classList.add('orange');
-          statusIndicator.classList.remove('red', 'green');
-        } else {
-          statusIndicator.classList.add('green');
-          statusIndicator.classList.remove('orange', 'red');
-        }
-      } else if (parameter === 'power') {
-        var power = getRandomNumber(100, 500);
-        if (chart.data.labels.length >= 10) {
-          chart.data.labels.shift();
-          chart.data.datasets[0].data.shift();
-        }
-        chart.data.labels.push(timestamp);
-        chart.data.datasets[0].data.push(power);
-
-        var statusIndicator = document.getElementById('statusIndicator');
-        if (power >= 470) {
-          statusIndicator.classList.add('red');
-          statusIndicator.classList.remove('orange', 'green');
-          openCriticalModal();
-        } else if (power >= 400) {
-          statusIndicator.classList.add('orange');
-          statusIndicator.classList.remove('red', 'green');
-        } else {
-          statusIndicator.classList.add('green');
-          statusIndicator.classList.remove('orange', 'red');
-        }
-      } else if (parameter === 'vibration') {
-        var vibration = getRandomNumber(0, 10);
-        if (chart.data.labels.length >= 10) {
-          chart.data.labels.shift();
-          chart.data.datasets[0].data.shift();
-        }
-        chart.data.labels.push(timestamp);
-        chart.data.datasets[0].data.push(vibration);
-
-        var statusIndicator = document.getElementById('statusIndicator');
-        if (vibration >= 9) {
-          statusIndicator.classList.add('red');
-          statusIndicator.classList.remove('orange', 'green');
-          openCriticalModal();
-        } else if (vibration >= 7) {
-          statusIndicator.classList.add('orange');
-          statusIndicator.classList.remove('red', 'green');
-        } else {
-          statusIndicator.classList.add('green');
-          statusIndicator.classList.remove('orange', 'red');
-        }
-      } else if (parameter === 'soundLevel') {
-        var soundLevel = getRandomNumber(30, 100);
-        if (chart.data.labels.length >= 10) {
-          chart.data.labels.shift();
-          chart.data.datasets[0].data.shift();
-        }
-        chart.data.labels.push(timestamp);
-        chart.data.datasets[0].data.push(soundLevel);
-
-        var statusIndicator = document.getElementById('statusIndicator');
-        if (soundLevel >= 90) {
-          statusIndicator.classList.add('red');
-          statusIndicator.classList.remove('orange', 'green');
-          openCriticalModal();
-        } else if (soundLevel >= 75) {
-          statusIndicator.classList.add('orange');
-          statusIndicator.classList.remove('red', 'green');
-        } else {
-          statusIndicator.classList.add('green');
-          statusIndicator.classList.remove('orange', 'red');
-        }
-      } else if (parameter === 'voltage') {
-        var voltage = getRandomNumber(200, 240);
-        if (chart.data.labels.length >= 10) {
-          chart.data.labels.shift();
-          chart.data.datasets[0].data.shift();
-        }
-        chart.data.labels.push(timestamp);
-        chart.data.datasets[0].data.push(voltage);
-
-        var statusIndicator = document.getElementById('statusIndicator');
-        if (voltage >= 220) {
-          statusIndicator.classList.add('red');
-          statusIndicator.classList.remove('orange', 'green');
-          openCriticalModal();
-        } else if (voltage >= 190) {
-          statusIndicator.classList.add('orange');
-          statusIndicator.classList.remove('red', 'green');
-        } else {
-          statusIndicator.classList.add('green');
-          statusIndicator.classList.remove('orange', 'red');
-        }
-      } else if (parameter === 'contamination') {
-        var contamination = getRandomNumber(0, 100);
-        if (chart.data.labels.length >= 10) {
-          chart.data.labels.shift();
-          chart.data.datasets[0].data.shift();
-        }
-        chart.data.labels.push(timestamp);
-        chart.data.datasets[0].data.push(contamination);
-
-        var statusIndicator = document.getElementById('statusIndicator');
-        if (contamination >= 90) {
-          statusIndicator.classList.add('red');
-          statusIndicator.classList.remove('orange', 'green');
-          openCriticalModal();
-        } else if (contamination >= 75) {
-          statusIndicator.classList.add('orange');
-          statusIndicator.classList.remove('red', 'green');
-        } else {
-          statusIndicator.classList.add('green');
-          statusIndicator.classList.remove('orange', 'red');
-        }
-      }  else if (parameter === 'waterLevel') {
-        var waterLevel = getRandomNumber(0, 100);
-        if (chart.data.labels.length >= 10) {
-          chart.data.labels.shift();
-          chart.data.datasets[0].data.shift();
-        }
-        chart.data.labels.push(timestamp);
-        chart.data.datasets[0].data.push(waterLevel);
-
-        var statusIndicator = document.getElementById('statusIndicator');
-        if (waterLevel >= 90) {
-          statusIndicator.classList.add('red');
-          statusIndicator.classList.remove('orange', 'green');
-          openCriticalModal();
-        } else if (waterLevel >= 75) {
-          statusIndicator.classList.add('orange');
-          statusIndicator.classList.remove('red', 'green');
-        } else {
-          statusIndicator.classList.add('green');
-          statusIndicator.classList.remove('orange', 'red');
-        }
-      }  else if (parameter === 'current') {
-        var current = getRandomNumber(0, 10);
-        if (chart.data.labels.length >= 10) {
-          chart.data.labels.shift();
-          chart.data.datasets[0].data.shift();
-        }
-        chart.data.labels.push(timestamp);
-        chart.data.datasets[0].data.push(current);
-
-        var statusIndicator = document.getElementById('statusIndicator');
-        if (current >= 9) {
-          statusIndicator.classList.add('red');
-          statusIndicator.classList.remove('orange', 'green');
-          openCriticalModal();
-        } else if (current >= 7) {
-          statusIndicator.classList.add('orange');
-          statusIndicator.classList.remove('red', 'green');
-        } else {
-          statusIndicator.classList.add('green');
-          statusIndicator.classList.remove('orange', 'red');
-        }
-      }
-      // Добавьте генерацию случайных значений для остальных параметров
-      chart.update();
-    }
-
-    // Генерация случайных данных каждую секунду
-    setInterval(generateRandomData, 1000);
-
-    // Генерация случайного числа в заданном диапазоне
-    function getRandomNumber(min, max) {
-      return Math.random() * (max - min) + min;
-    }
-  </script> -->
-  
-  <!-- <script>
-
+  <!-- Динамические данные для обычных параметров (ГОТОВЫЙ) -->
+  <script>
+    var intervalId;
     // Данные для графика
     var chartData = {
        labels: [],
        datasets: []
      };
- 
      // Опции графика
      var chartOptions = {
-       responsive: true,
-       scales: {
-         y: {
-           beginAtZero: true
-         }
-       }
+        responsive: true,
+        scales: {
+            x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Время'
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Значение'
+                }
+            }
+        }
      };
  
      // Создание графика
@@ -726,7 +350,7 @@
            label: 'Давление на входе насоса',
            data: [],
            borderColor: 'white',
-           fill: false
+           fill: false,
          });
        } else if (parameter === 'temperature') {
          chart.data.datasets.push({
@@ -794,17 +418,11 @@
        }
        // Добавьте обработку данных для остальных параметров
  
-       // chart.update();
- 
        // Установка интервала для обновления данных
        clearInterval(intervalId);
        intervalId = setInterval(function() {
            generateRandomData(chart);
        }, 1000);
- 
-       var statusIndicator = document.getElementById("statusIndicator");
-       statusIndicator.classList.add("green"); // Изначально установим зеленый цвет
-       statusIndicator.classList.remove("green", "orange", "red"); // Удаление всех классов состояний
  
      }
  
@@ -816,15 +434,20 @@
      }
  
      // Функция для обновления показаний
-     // function refreshData() {
-     //   // Очистка данных графика
-     //   chart.data.labels = [];
-     //   chart.data.datasets.forEach(function(dataset) {
-     //     dataset.data = [];
-     //   });
+     function refreshData() {
+       // Очистка данных графика
+       chart.data.labels = [];
+       chart.data.datasets.forEach(function(dataset) {
+         dataset.data = [];
+       });
  
-     //   generateRandomData();
-     // }
+       generateRandomData();
+
+       clearInterval(intervalId);
+          intervalId = setInterval(function() {
+               generateRandomData(chart);
+        }, 1000);
+     }
  
      // Обработчик события для кнопки открытия модального окна
      var openModalButton = document.getElementById('openModalButton');
@@ -835,8 +458,8 @@
      closeButton.addEventListener('click', closeModal);
  
      // Обработчик события для кнопки обновления показаний
-     // var refreshButton = document.getElementById('refreshButton');
-     // refreshButton.addEventListener('click', refreshData);
+     var refreshButton = document.getElementById('refreshButton');
+     refreshButton.addEventListener('click', refreshData);
  
  
      // Функция для открытия модального окна с критической ситуацией
@@ -1082,332 +705,33 @@
        // Добавьте генерацию случайных значений для остальных параметров
        chart.update();
      }
- 
-     // Генерация случайных данных каждую секунду
-     // setInterval(generateRandomData, 1000);
-     function updateChart() {
-       var parameter = document.querySelector('input[name="parameter"]:checked').value;
- 
-             // Очистка данных графика
-             var dataset = chart.data.datasets[0];
-             dataset.data = [];
-             chart.data.labels = [];
- 
-             // Обновление графика с новыми данными
-             clearInterval(intervalId);
-             intervalId = setInterval(function() {
-               generateRandomData(chart);
-             }, 1000);
- 
-             // Установка индикатора состояния в зеленый цвет
-             var statusIndicator = document.getElementById("statusIndicator");
-             statusIndicator.classList.add("green");
-             statusIndicator.classList.remove("red", "orange");
- 
-             // Закрытие модального окна с критическим сообщением
-             var criticalModal = document.getElementById("criticalModal");
-             criticalModal.style.display = "none";
-         }
      // Генерация случайного числа в заданном диапазоне
      function getRandomNumber(min, max) {
        return Math.random() * (max - min) + min;
      }
-   </script> -->
-	
-  <!-- <script>
-		var selectedChartType = '';
+   </script>
+	 <!-- Статические данные -->
 
-		// Функция выбора типа графика
-		function selectChartType(chartType) {
-		  selectedChartType = chartType;
-		}
-
-		// Функция открытия модального окна
-		function openModal() {
-			if (selectChartType === ''){
-				return;
-			}
-
-			var modal = document.getElementById('modal');
-			modal.style.display = 'flex';
-
-			drawChart(selectedChartType);
-		}
-	
-		// Функция закрытия модального окна
-		function closeModal() {
-		  var modal = document.getElementById('modal');
-		  modal.style.display = 'none';
-		}
-	
-		// Функция отрисовки графика
-		function drawChart(chartType) {
-		  var chartCanvas = document.getElementById('chartCanvas');
-		
-		// Очистка содержимого модального окна перед отрисовкой нового графика
-		var chartInstance = chartCanvas.chart;
-		if (chartInstance) {
-			chartInstance.destroy();
-		}
-		
-		var chartType;
-		var chartData;
-      	var chartOptions;
-
-
-      if (chartType === 'line1') {
-		chartType = 'line';
-        var data = {
-          labels: [1, 1, 1, 2, 2, 2, 3],
-          datasets: [{
-            label: 'График 1',
-            data: [60.5, 62.2, 59.8, 63.1, 61.7, 62.8, 59.5],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
-          }]
-        };
-        var options = {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        };
-
-        chartData = data;
-        chartOptions = options;
-      } else if (chartType === 'line2') {
-		chartType = 'line';
-        var data = {
-          labels: [3.00, 6.00, 9.00, 15.00, 18.00, 21.00],
-          datasets: [{
-            label: 'График 2',
-            data: [23.5, 24.1, 22.9, 23.8, 24.5, 22.3],
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgba(255, 99, 132, 1)',
-            borderWidth: 1
-          }]
-        };
-        var options = {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        };
-
-        chartData = data;
-        chartOptions = options;
-      } else if (chartType === 'bar1') {
-		chartType = 'bar';
-        var data = {
-          labels: ['Зима', 'Весна', 'Лето', 'Осень'],
-          datasets: [{
-            label: 'График 3',
-            data: [40, 65, 21, 80],
-            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
-          }]
-        };
-        var options = {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        };
-
-        chartData = data;
-        chartOptions = options;
-      } else if (chartType === 'line3') {
-		chartType = 'line';
-        var data = {
-          labels: ['Зима', 'Весна', 'Лето', 'Осень'],
-          datasets: [{
-            label: 'График 3',
-            data: [32, 65, 2, 80],
-            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
-          }]
-        };
-        var options = {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        };
-
-        chartData = data;
-        chartOptions = options;
-      } else if (chartType === 'bar2') {
-		chartType = 'bar';
-        var data = {
-          labels: ['Зима', 'Весна', 'Лето', 'Осень'],
-          datasets: [{
-            label: 'График 3',
-            data: [12, 65, 21, 8],
-            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
-          }]
-        };
-        var options = {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        };
-
-        chartData = data;
-        chartOptions = options;
-      } else if (chartType === 'line4') {
-		chartType = 'line';
-        var data = {
-          labels: ['Зима', 'Весна', 'Лето', 'Осень'],
-          datasets: [{
-            label: 'График 3',
-            data: [40, 5, 7, 80],
-            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
-          }]
-        };
-        var options = {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        };
-
-        chartData = data;
-        chartOptions = options;
-      } else if (chartType === 'bar3') {
-		chartType = 'bar';
-        var data = {
-          labels: ['Зима', 'Весна', 'Лето', 'Осень'],
-          datasets: [{
-            label: 'График 3',
-            data: [1, 2, 3, 4],
-            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
-          }]
-        };
-        var options = {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        };
-
-        chartData = data;
-        chartOptions = options;
-      } else if (chartType === 'bar4') {
-		chartType = 'bar';
-        var data = {
-          labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн'],
-          datasets: [{
-            label: 'График 1',
-            data: [10, 5, 54, 23, 1, 98],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
-          }]
-        };
-        var options = {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        };
-
-        chartData = data;
-        chartOptions = options;
-      } else if (chartType === 'line5') {
-		chartType = 'line';
-        var data = {
-          labels: ['Зима', 'Весна', 'Лето', 'Осень'],
-          datasets: [{
-            label: 'График 3',
-            data: [99, 38, 11, 3],
-            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
-          }]
-        };
-        var options = {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        };
-
-        chartData = data;
-        chartOptions = options;
-      } else if (chartType === 'line6') {
-		chartType = 'line';
-        var data = {
-		  labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн'],
-          datasets: [{
-            label: 'График 1',
-            data: [43, 23, 65, 12, 87, 60],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
-          }]
-        };
-        var options = {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        };
-
-        chartData = data;
-        chartOptions = options;
-      }
-
-      var chartInstance = new Chart(chartCanvas, {
-        type: chartType,
-        data: chartData,
-        options: chartOptions
-      });
-
-      // Сохранение экземпляра графика в элементе canvas
-      chartCanvas.chart = chartInstance;
-    }
-	</script> -->
-
-	<!-- <script>
-        var intervalId; // Идентификатор интервала для обновления данных
-        var chart; // Переменная для хранения объекта графика
+	<script>
+        var intervalIdd; // Идентификатор интервала для обновления данных
+        var secondChart; // Переменная для хранения объекта графика
         var criticalThreshold = 0.95; // Критический порог значения параметра
 
         // Функция для открытия модального окна
-        function openModalNew() {
+        function openModalWindow() {
             var selectedParameter = document.querySelector('input[name="chartType"]:checked').value;
 
             // Очистка данных графика, если график уже был создан
-            if (chart) {
-                chart.destroy();
+            if (secondChart) {
+              secondChart.destroy();
             }
 
-            var modal = document.getElementById("modalNew");
-            modal.style.display = "flex";
+            var secondModalWindow = document.getElementById("secondModalWindow");
+            secondModalWindow.style.display = "flex";
 
             // Создание и отображение графика с помощью Chart.js
-            var ctx = document.getElementById("chartCanvasNew").getContext('2d');
-            chart = new Chart(ctx, {
+            var ctx = document.getElementById("chartCanvas").getContext('2d');
+            secondChart = new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: [],
@@ -1441,41 +765,41 @@
             });
 
             // Установка интервала для обновления данных
-            clearInterval(intervalId);
-            intervalId = setInterval(function() {
-                updateChartData(chart);
+            clearInterval(intervalIdd);
+            intervalIdd = setInterval(function() {
+                updateChartData(secondChart);
             }, 1000);
 
             // Установка индикатора состояния
-            var statusIndicator = document.getElementById("statusIndicator");
-            statusIndicator.classList.remove("green", "orange", "red"); // Удаление всех классов состояний
-            statusIndicator.classList.add("green"); // Изначально установим зеленый цвет
+            var secondStatusIndicator = document.getElementById("secondStatusIndicator");
+            secondStatusIndicator.classList.remove("green", "orange", "red"); // Удаление всех классов состояний
+            secondStatusIndicator.classList.add("green"); // Изначально установим зеленый цвет
         }
 
         // Функция для закрытия модального окна
-        function closeModalNew() {
-            clearInterval(intervalId);
-            var modal = document.getElementById("modalNew");
-            modal.style.display = "none";
+        function closeModalWindow() {
+            clearInterval(intervalIdd);
+            var secondModalWindow = document.getElementById("secondModalWindow");
+            secondModalWindow.style.display = "none";
 
             // Очистка данных графика
-            if (chart) {
-                chart.destroy();
+            if (secondChart) {
+              secondChart.destroy();
             }
         }
 
         // Функция для закрытия модального окна с критическим сообщением
         function closeCriticalModal() {
-            var modal = document.getElementById("criticalModal");
-            modal.style.display = "none";
+            var secondModalWindow = document.getElementById("criticalModal");
+            secondModalWindow.style.display = "none";
         }
 
         // Функция для обновления данных графика
-        function updateChartData(chart) {
+        function updateChartData(secondChart) {
             var randomValue = Math.random(); // Генерация случайного значения от 0 до 1
-            var dataset = chart.data.datasets[0];
+            var dataset = secondChart.data.datasets[0];
             var data = dataset.data;
-            var labels = chart.data.labels;
+            var labels = secondChart.data.labels;
 
             if (data.length >= 10) {
                 data.shift();
@@ -1485,24 +809,24 @@
             data.push(randomValue);
             labels.push(new Date().toLocaleTimeString());
 
-            chart.update();
+            secondChart.update();
 
             // Обновление индикатора состояния
-            var statusIndicator = document.getElementById("statusIndicator");
+            var secondStatusIndicator = document.getElementById("secondStatusIndicator");
             if (randomValue >= criticalThreshold) {
-                statusIndicator.classList.remove("green", "orange");
-                statusIndicator.classList.add("red");
+              secondStatusIndicator.classList.remove("green", "orange");
+              secondStatusIndicator.classList.add("red");
 
                 // Остановка обновления графика и открытие модального окна с критическим сообщением
-                clearInterval(intervalId);
+                clearInterval(intervalIdd);
                 var criticalModal = document.getElementById("criticalModal");
                 criticalModal.style.display = "flex";
             } else if (randomValue >= 0.70) {
-                statusIndicator.classList.remove("green", "red");
-                statusIndicator.classList.add("orange");
+              secondStatusIndicator.classList.remove("green", "red");
+              secondStatusIndicator.classList.add("orange");
             } else {
-                statusIndicator.classList.remove("orange", "red");
-                statusIndicator.classList.add("green");
+              secondStatusIndicator.classList.remove("orange", "red");
+              secondStatusIndicator.classList.add("green");
             }
         }
 
@@ -1511,26 +835,26 @@
             var selectedParameter = document.querySelector('input[name="chartType"]:checked').value;
 
             // Очистка данных графика
-            var dataset = chart.data.datasets[0];
+            var dataset = secondChart.data.datasets[0];
             dataset.data = [];
-            chart.data.labels = [];
+            secondChart.data.labels = [];
 
             // Обновление графика с новыми данными
-            clearInterval(intervalId);
-            intervalId = setInterval(function() {
-                updateChartData(chart);
+            clearInterval(intervalIdd);
+            intervalIdd = setInterval(function() {
+                updateChartData(secondChart);
             }, 1000);
 
             // Установка индикатора состояния в зеленый цвет
-            var statusIndicator = document.getElementById("statusIndicator");
-            statusIndicator.classList.remove("red", "orange");
-            statusIndicator.classList.add("green");
+            var secondStatusIndicator = document.getElementById("secondStatusIndicator");
+            secondStatusIndicator.classList.remove("red", "orange");
+            secondStatusIndicator.classList.add("green");
 
             // Закрытие модального окна с критическим сообщением
             var criticalModal = document.getElementById("criticalModal");
             criticalModal.style.display = "none";
         }
-  </script> -->
+  </script>
 
 
 </body>
