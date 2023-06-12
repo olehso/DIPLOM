@@ -1,0 +1,82 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+}
+.row h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    margin: 9.6px 0;
+    color: white;
+}
+.column {
+    padding: 16px;
+}
+.card {
+    height: 550px;
+    padding: 50px 20px;
+    text-align: center;
+    background: linear-gradient(0deg, #8FAFFF 9px, transparent 9px);
+    background-repeat: no-repeat;
+    background-position: 0 10px;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    transition: 0.5s;
+}
+.card .icon {
+    font-size: 40px;
+    height: 90px;
+    width: 90px;
+    margin: auto;
+    background-color: #8FAFFF;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #ffffff;
+}
+.icon:before {
+    position: absolute;
+    content: "";
+    height: 70px;
+    width: 70px;
+    border: 5px solid #8FAFFF;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.card h3 {
+    font-size: 20.8px;
+    margin: 16px 0 22.4px 0;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: white;
+}
+.card p {
+    line-height: 32px;
+    color: #625a71;
+}
+.card:hover {
+    background-position: 0;
+}
+.card:hover .icon:before{
+    height: 98px;
+    width: 98px;
+}
+@media screen and (min-width: 768px) {
+    section {
+        padding: 16px 112px;
+    }
+}
+@media screen and (min-width: 992px) {
+    section {
+        padding: 16px;
+    }
+    .card {
+        padding: 80px 32px;
+    }
+    .column {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+        padding: 0 16px;
+    }
+}

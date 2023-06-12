@@ -32,7 +32,6 @@
 				<ul class="links">
 					<li><a href="index.html">HOME</a></li>
 					<li><a href="about.html">ABOUT</a></li>
-					<li><a href="services.html">SERVICES</a></li>
 					<li><a href="features.html">FEATURES</a></li>
 					<li><a href="contact us.html">CONTACT US</a></li>
 				</ul>
@@ -42,7 +41,6 @@
 			<div class="dropdown_menu">
 				<li><a href="index.html">HOME</a></li>
 				<li><a href="about.html">ABOUT</a></li>
-				<li><a href="services.html">SERVICES</a></li>
 				<li><a href="features.html">FEATURES</a></li>
 				<li><a href="contact us.html">CONTACT US</a></li>
 			</div>
@@ -173,7 +171,6 @@
 							</div>
 							<div class="modal__diagram__button">
 								<button id="openModalButton" class="section__button section__button3">ДІАГРАМА</button>
-								<button class="section__button section__button4">АНІМАЦІЯ</button>
 							</div>
 
 						</div>
@@ -241,7 +238,7 @@
 								<button class="modal__close">НАЗАД</button>
 							</div>
 							<div class="modal__diagram__button">
-								<button  class="section__button section__button3" onclick="openModalWindow()">ДІАГРАМА</button>
+								<button id="secondOpenModalButton" class="section__button section__button3" >ДІАГРАМА</button>
 							</div>
 
 						</div>
@@ -273,8 +270,8 @@
 						</div>
 						<div class="modal__under">
 							<div class="modal__close__button">
-								<button class="modal__close" onclick="closeModalWindow()">НАЗАД</button>
-								<button class="refresh__button" onclick="updateChart()">ОНОВИТИ ПОКАЗИ</button>
+								<button id="secondCloseButton" class="modal__close" >НАЗАД</button>
+								<button id="secondRefreshButton" class="refresh__button" >ОНОВИТИ ПОКАЗИ</button>
 							</div>
 							<div class="modal__diagram__button">
 								<div id="secondStatusIndicator" class="status-indicator"></div>
@@ -793,7 +790,16 @@
             var secondModalWindow = document.getElementById("criticalModal");
             secondModalWindow.style.display = "none";
         }
-
+        var secondOpenModalButton = document.getElementById('secondOpenModalButton');
+        secondOpenModalButton.addEventListener('click', openModalWindow);
+    
+        // Обработчик события для кнопки закрытия модального окна
+        var secondCloseButton = document.getElementById('secondCloseButton');
+        secondCloseButton.addEventListener('click', closeModalWindow);
+    
+        // Обработчик события для кнопки обновления показаний
+        var secondRefreshButton = document.getElementById('secondRefreshButton');
+        secondRefreshButton.addEventListener('click', updateChart);
         // Функция для обновления данных графика
         function updateChartData(secondChart) {
             var randomValue = Math.random(); // Генерация случайного значения от 0 до 1

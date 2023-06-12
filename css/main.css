@@ -79,7 +79,7 @@ body {
 }
 .banner-area h2 {
 	padding-top: 8%;
-	font-size: 7.5rem;
+	font-size: 120px;
 	font-family: Montserrat-a;
 	color: #ffffff;
 }
@@ -138,7 +138,6 @@ body {
 	justify-content: center;
 	align-items: center;
 	display: flex;
-	gap: 0.2rem;
 }
 
   /* TEXT-BLOCK */
@@ -148,15 +147,14 @@ body {
 	text-align: center;
 }
 .text-block__h {
-	font-size: 1.7rem;
-	line-height: 2rem;
-	color: var(--color-header);
-	margin-bottom: 1.5rem;
+	font-size: 27px;
+	line-height: 32px;
+	margin-bottom: 24px;
 	
 }
 .text-block__p {
-	line-height: 1.2;
-	margin-bottom: 3rem;
+	line-height: 19px;
+	margin-bottom: 48px;
 	text-align: justify;
 } 
 
@@ -168,5 +166,5 @@ body {
 	padding: 100px 170px 170px 170px;
 }
 .text p {
-	margin-bottom: 1em;
+	margin-bottom: 16px;
 }
