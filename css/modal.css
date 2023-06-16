@@ -167,8 +167,9 @@
 }
 
 .modal__container label input:checked + span {
-	background-color: #edf2f4;
+	background-color: #eeedf4;
 	color: rgb(0, 0, 0);
+	font-family: Montserrat-h;
 }
 
 .modal__container label input:checked + span:before {
@@ -180,11 +181,13 @@
 	align-items: center;
 	padding: 6px 12px 6px 6px;
 	transition: 0.25s ease;
-	color: #8d99ae;
+	color: #ffffff;
 }
 
 .modal__container label span:hover {
 	background-color: #d6d6e5;
+	color: #0F111A;
+	font-family: Montserrat-h;
 }
 
 .modal__container label span:before {
@@ -236,3 +239,13 @@ textarea {
 	text-align: left;
 }
 
+.centered-text {
+	opacity: 70%;
+	font-size: 42px;
+	font-family: Montserrat-h;
+	color: rgb(216, 216, 216);
+	position: absolute;
+	top: 38%;
+	left: 44%;
+	pointer-events: none;
+  }
