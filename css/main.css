@@ -3,12 +3,16 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+/* ДИРЕКТИВА РУТ  ДЛЯ ОДИНАКОВОГО 
+ОТОБРАЖЕНИЯ ПРИ РАЗНОМ РАЗРЕШЕНИИ*/
 :root {
 	--index: calc(1vw + 1vh);
 	--color-header: #FFFFFF;
 	--color-text: #FFFFFF;
 	--parametr-gap: calc(var(--index) * 10);
 }
+/* ПОДКЛЮЧЕНИЕ ШРИФТОВ
+БУКВЫ РЯДОМ, ЧТОБЫ НЕ БРАЛСЯ ИЗ СИСТЕМЫ */
 @font-face {
 	font-family: Montserrat-a;
 	src: url(../font/Montserrat-Thin.woff);
